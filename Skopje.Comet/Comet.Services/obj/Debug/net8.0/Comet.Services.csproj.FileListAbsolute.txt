@@ -1,0 +1,5 @@
+D:\proekt-office\vozila\Skopje.Comet\Comet.Services\obj\Debug\net8.0\Comet.Services.csproj.AssemblyReference.cache
+D:\proekt-office\vozila\Skopje.Comet\Comet.Services\obj\Debug\net8.0\Comet.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\proekt-office\vozila\Skopje.Comet\Comet.Services\obj\Debug\net8.0\Comet.Services.AssemblyInfoInputs.cache
+D:\proekt-office\vozila\Skopje.Comet\Comet.Services\obj\Debug\net8.0\Comet.Services.AssemblyInfo.cs
+D:\proekt-office\vozila\Skopje.Comet\Comet.Services\obj\Debug\net8.0\Comet.Services.csproj.CoreCompileInputs.cache

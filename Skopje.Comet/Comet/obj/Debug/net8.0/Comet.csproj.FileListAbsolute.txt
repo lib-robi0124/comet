@@ -1,0 +1,9 @@
+D:\proekt-office\vozila\Skopje.Comet\Comet\obj\Debug\net8.0\Comet.csproj.AssemblyReference.cache
+D:\proekt-office\vozila\Skopje.Comet\Comet\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\proekt-office\vozila\Skopje.Comet\Comet\obj\Debug\net8.0\Comet.GeneratedMSBuildEditorConfig.editorconfig
+D:\proekt-office\vozila\Skopje.Comet\Comet\obj\Debug\net8.0\Comet.AssemblyInfoInputs.cache
+D:\proekt-office\vozila\Skopje.Comet\Comet\obj\Debug\net8.0\Comet.AssemblyInfo.cs
+D:\proekt-office\vozila\Skopje.Comet\Comet\obj\Debug\net8.0\Comet.csproj.CoreCompileInputs.cache
+D:\proekt-office\vozila\Skopje.Comet\Comet\obj\Debug\net8.0\Comet.MvcApplicationPartsAssemblyInfo.cache
+D:\proekt-office\vozila\Skopje.Comet\Comet\obj\Debug\net8.0\Comet.RazorAssemblyInfo.cache
+D:\proekt-office\vozila\Skopje.Comet\Comet\obj\Debug\net8.0\Comet.RazorAssemblyInfo.cs

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj": {}
+    "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj": {}
   },
   "projects": {
-    "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj": {
+    "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj",
+        "projectUniqueName": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj",
         "projectName": "Comet.DataAccess",
-        "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj",
+        "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Robertr2\\.nuget\\packages\\",
-        "outputPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.DataAccess\\obj\\",
+        "outputPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj": {
-                "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj"
+              "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj": {
+                "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj"
               },
-              "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj": {
-                "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj"
+              "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj": {
+                "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj"
               }
             }
           }
@@ -78,6 +78,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.22, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
             }
           },
           "imports": [
@@ -100,14 +104,14 @@
         }
       }
     },
-    "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj": {
+    "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj",
+        "projectUniqueName": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj",
         "projectName": "Comet.Domain",
-        "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj",
+        "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj",
         "packagesPath": "C:\\Users\\Robertr2\\.nuget\\packages\\",
-        "outputPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\obj\\",
+        "outputPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -165,14 +169,14 @@
         }
       }
     },
-    "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj": {
+    "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj",
+        "projectUniqueName": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj",
         "projectName": "Comet.Services",
-        "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj",
+        "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj",
         "packagesPath": "C:\\Users\\Robertr2\\.nuget\\packages\\",
-        "outputPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Services\\obj\\",
+        "outputPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -193,11 +197,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj": {
-                "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj"
+              "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj": {
+                "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj"
               },
-              "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj": {
-                "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj"
+              "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj": {
+                "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj"
               }
             }
           }
@@ -271,14 +275,14 @@
         }
       }
     },
-    "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj": {
+    "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj",
+        "projectUniqueName": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj",
         "projectName": "Comet.ViewModels",
-        "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj",
+        "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj",
         "packagesPath": "C:\\Users\\Robertr2\\.nuget\\packages\\",
-        "outputPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\obj\\",
+        "outputPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -299,8 +303,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj": {
-                "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj"
+              "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj": {
+                "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Domain\\Comet.Domain.csproj"
               }
             }
           }

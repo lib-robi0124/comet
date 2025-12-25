@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36811.4 d17.14
+VisualStudioVersion = 17.14.36811.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comet", "Comet\Comet.csproj", "{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comet.Services", "Comet.Services\Comet.Services.csproj", "{8E756A58-5D9F-4068-AE4B-9E1E0A2FDEEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comet.ViewModels", "Comet.ViewModels\Comet.ViewModels.csproj", "{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comet.DTO", "Comet.DTO\Comet.DTO.csproj", "{DD8A261B-5AF1-4CB0-8894-EFE06C86615F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD8A261B-5AF1-4CB0-8894-EFE06C86615F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD8A261B-5AF1-4CB0-8894-EFE06C86615F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD8A261B-5AF1-4CB0-8894-EFE06C86615F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD8A261B-5AF1-4CB0-8894-EFE06C86615F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

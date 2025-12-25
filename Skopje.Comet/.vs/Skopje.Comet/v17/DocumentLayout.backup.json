@@ -1,30 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\",
+  "WorkspaceRootPath": "D:\\proekt-office\\comet\\Skopje.Comet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\vozila\\skopje.comet\\comet.domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|d:\\proekt-office\\comet\\skopje.comet\\comet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|solutionrelative:comet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\vozila\\skopje.comet\\comet.domain\\entities\\ncolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\ncolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\vozila\\skopje.comet\\comet.domain\\entities\\buyeruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\buyeruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\vozila\\skopje.comet\\comet.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\vozila\\skopje.comet\\comet.domain\\entities\\libertyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\libertyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\vozila\\skopje.comet\\comet.domain\\enums\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\enums\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|d:\\proekt-office\\comet\\skopje.comet\\comet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|solutionrelative:comet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,79 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\Product.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\Product.cs",
-              "ToolTip": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\Product.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet\\Program.cs",
+              "RelativeDocumentMoniker": "Comet\\Program.cs",
+              "ToolTip": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet\\Program.cs",
+              "RelativeToolTip": "Comet\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T14:20:52.273Z",
+              "WhenOpened": "2025-12-25T14:40:55.758Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NCOList.cs",
-              "DocumentMoniker": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\NCOList.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\NCOList.cs",
-              "ToolTip": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\NCOList.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\NCOList.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T08:33:42.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Role.cs",
-              "DocumentMoniker": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\Role.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\Role.cs",
-              "ToolTip": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\Role.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T08:32:25.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Country.cs",
-              "DocumentMoniker": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Enums\\Country.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Enums\\Country.cs",
-              "ToolTip": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Enums\\Country.cs",
-              "RelativeToolTip": "Comet.Domain\\Enums\\Country.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T08:31:15.441Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BuyerUser.cs",
-              "DocumentMoniker": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\BuyerUser.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\BuyerUser.cs",
-              "ToolTip": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\BuyerUser.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\BuyerUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T08:27:08.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Libertyuser.cs",
-              "DocumentMoniker": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\Libertyuser.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\Libertyuser.cs",
-              "ToolTip": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Domain\\Entities\\Libertyuser.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\Libertyuser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T08:19:53.358Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet\\appsettings.json",
+              "RelativeDocumentMoniker": "Comet\\appsettings.json",
+              "ToolTip": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet\\appsettings.json",
+              "RelativeToolTip": "Comet\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-25T14:40:30.41Z",
               "EditorCaption": ""
             }
           ]

@@ -735,6 +735,32 @@
           }
         }
       },
+      "SendGrid/9.29.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "starkbank-ecdsa": "[1.3.3, 2.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "starkbank-ecdsa/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        }
+      },
       "System.ClientModel/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1176,7 +1202,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.22",
           "Microsoft.EntityFrameworkCore": "8.0.22",
           "Microsoft.EntityFrameworkCore.Abstractions": "8.0.22",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.22"
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.22",
+          "SendGrid": "9.29.3"
         },
         "compile": {
           "bin/placeholder/Comet.DataAccess.dll": {}
@@ -2280,6 +2307,45 @@
         "packageIcon.png"
       ]
     },
+    "SendGrid/9.29.3": {
+      "sha512": "nb/zHePecN9U4/Bmct+O+lpgK994JklbCCNMIgGPOone/DngjQoMCHeTvkl+m0Nglvm0dqMEshmvB4fO8eF3dA==",
+      "type": "package",
+      "path": "sendgrid/9.29.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SendGrid.dll",
+        "lib/net40/SendGrid.pdb",
+        "lib/net40/SendGrid.xml",
+        "lib/net452/SendGrid.dll",
+        "lib/net452/SendGrid.pdb",
+        "lib/net452/SendGrid.xml",
+        "lib/netstandard1.3/SendGrid.dll",
+        "lib/netstandard1.3/SendGrid.pdb",
+        "lib/netstandard1.3/SendGrid.xml",
+        "lib/netstandard2.0/SendGrid.dll",
+        "lib/netstandard2.0/SendGrid.pdb",
+        "lib/netstandard2.0/SendGrid.xml",
+        "sendgrid.9.29.3.nupkg.sha512",
+        "sendgrid.nuspec"
+      ]
+    },
+    "starkbank-ecdsa/1.3.3": {
+      "sha512": "OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
+      "type": "package",
+      "path": "starkbank-ecdsa/1.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/StarkbankEcdsa.dll",
+        "lib/net452/StarkbankEcdsa.dll",
+        "lib/netstandard1.3/StarkbankEcdsa.dll",
+        "lib/netstandard2.0/StarkbankEcdsa.dll",
+        "lib/netstandard2.1/StarkbankEcdsa.dll",
+        "starkbank-ecdsa.1.3.3.nupkg.sha512",
+        "starkbank-ecdsa.nuspec"
+      ]
+    },
     "System.ClientModel/1.0.0": {
       "sha512": "I3CVkvxeqFYjIVEP59DnjbeoGNfo/+SZrCLpRz2v/g0gpCHaEMPtWSY0s9k/7jR1rAsLNg2z2u1JRB76tPjnIw==",
       "type": "package",
@@ -3197,11 +3263,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj",
+      "projectUniqueName": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj",
       "projectName": "Comet.Services",
-      "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj",
+      "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Services\\Comet.Services.csproj",
       "packagesPath": "C:\\Users\\Robertr2\\.nuget\\packages\\",
-      "outputPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.Services\\obj\\",
+      "outputPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3222,11 +3288,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj": {
-              "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj"
+            "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj": {
+              "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.DataAccess\\Comet.DataAccess.csproj"
             },
-            "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj": {
-              "projectPath": "D:\\proekt-office\\vozila\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj"
+            "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj": {
+              "projectPath": "D:\\proekt-office\\comet\\Skopje.Comet\\Comet.ViewModels\\Comet.ViewModels.csproj"
             }
           }
         }

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Comet.Domain\Comet.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

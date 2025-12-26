@@ -21,7 +21,6 @@ namespace Comet.DataAccess.Implementations
         public async Task BulkInsertOrUpdateAsync(IEnumerable<Product> products)
         {
             using var transaction = await _context.Database.BeginTransactionAsync();
-
             try
             {
                 foreach (var product in products)
@@ -79,5 +78,6 @@ namespace Comet.DataAccess.Implementations
             _context.Products.Update(entity);
             await _context.SaveChangesAsync();
         }
+        public Task SaveChangesAsync() => _context.SaveChangesAsync();
     }
 }

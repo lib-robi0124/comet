@@ -10,5 +10,6 @@ namespace Comet.DataAccess.Interfaces
         Task<IEnumerable<Product>> GetByCategoryAsync(ProductCategory category);
         Task BulkInsertOrUpdateAsync(IEnumerable<Product> products);
         Task<int> GetCountAsync();
+        Task SaveChangesAsync();
     }
 }

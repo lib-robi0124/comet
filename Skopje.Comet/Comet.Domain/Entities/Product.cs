@@ -1,4 +1,5 @@
 ﻿using Comet.Domain.Enums;
+using System.Security.Cryptography;
 
 namespace Comet.Domain.Entities
 {
@@ -18,5 +19,6 @@ namespace Comet.Domain.Entities
         public decimal NetWeight { get; set; }
         public string Defects { get; set; } = string.Empty;
         public decimal? Price { get; set; }
+        public ICollection<Bid> Bids { get; set; } = new List<Bid>();
     }
 }

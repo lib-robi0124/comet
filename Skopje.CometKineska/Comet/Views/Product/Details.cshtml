@@ -1,0 +1,221 @@
+﻿@using Comet.ViewModels.Models
+@model ProductDetailsVM
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">@Model.Product.ProductCode - Product Details</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-4">Category:</dt>
+                                <dd class="col-sm-8">@Model.Product.ProductCategory</dd>
+
+                                <dt class="col-sm-4">Type:</dt>
+                                <dd class="col-sm-8">@Model.Product.ProductType</dd>
+
+                                <dt class="col-sm-4">Grade:</dt>
+                                <dd class="col-sm-8">@Model.Product.Grade</dd>
+
+                                <dt class="col-sm-4">Thickness:</dt>
+                                <dd class="col-sm-8">@Model.Product.Thickness.ToString("F2") mm</dd>
+
+                                <dt class="col-sm-4">Width:</dt>
+                                <dd class="col-sm-8">@Model.Product.Width mm</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-4">Gross Weight:</dt>
+                                <dd class="col-sm-8">@Model.Product.GrossWeight.ToString("F2") kg</dd>
+
+                                <dt class="col-sm-4">Net Weight:</dt>
+                                <dd class="col-sm-8">@Model.Product.NetWeight.ToString("F2") kg</dd>
+
+                                <dt class="col-sm-4">Color Top:</dt>
+                                <dd class="col-sm-8">@Model.Product.ColorTopSide</dd>
+
+                                <dt class="col-sm-4">Color Bottom:</dt>
+                                <dd class="col-sm-8">@Model.Product.ColorBottomSide</dd>
+
+                                <dt class="col-sm-4">Defects:</dt>
+                                <dd class="col-sm-8">@Model.Product.Defects</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info mt-3">
+                        <h5 class="alert-heading">
+                            <i class="fas fa-gavel"></i> Auction Information
+                        </h5>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Starting Price:</strong>
+                                <span class="h5 text-success">$@Model.Product.Price?.ToString("F2")</span>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Current Highest Bid:</strong>
+                                <span class="h5 text-danger">$@Model.CurrentHighestBid.ToString("F2")</span>
+                            </div>
+                        </div>
+                        <p class="mb-0 mt-2">
+                            <small>Minimum bid increment: $1.00</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            @if (Model.CanPlaceBid)
+            {
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="fas fa-hand-paper"></i> Place Your Bid</h5>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("PlaceBid", "Auction", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="ProductId" value="@Model.Product.Id" />
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Your Name</label>
+                                        <input type="text" name="BidderName" class="form-control" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" name="BidderEmail" class="form-control" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="form-label">Bid Amount ($)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" name="Amount" class="form-control"
+                                           step="0.01" min="@(Model.CurrentHighestBid + 1)"
+                                           value="@(Model.CurrentHighestBid + 1)" required />
+                                </div>
+                                <small class="form-text text-muted">
+                                    Minimum bid: $@((Model.CurrentHighestBid + 1).ToString("F2"))
+                                </small>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-paper-plane"></i> Submit Bid
+                            </button>
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-circle"></i>
+                    This product is not available for bidding at the moment.
+                </div>
+            }
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-history"></i> Bid History</h5>
+                </div>
+                <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                    @if (Model.Bids.Any())
+                    {
+                        <div class="list-group">
+                            @foreach (var bid in Model.Bids)
+                            {
+                                <div class="list-group-item">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">$@bid.Amount.ToString("F2")</h6>
+                                        <small>@bid.BidTime?.ToString("MM/dd HH:mm")</small>
+                                    </div>
+                                    <p class="mb-1">@bid.BidderName</p>
+                                    <small class="text-muted">@bid.BidderEmail</small>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-muted text-center">No bids yet. Be the first!</p>
+                    }
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0"><i class="fas fa-info-circle"></i> Auction Rules</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success"></i> All bids are binding</li>
+                        <li><i class="fas fa-check text-success"></i> Minimum bid increment: $1.00</li>
+                        <li><i class="fas fa-check text-success"></i> Winner will be notified by email</li>
+                        <li><i class="fas fa-check text-success"></i> Payment within 3 business days</li>
+                        <li><i class="fas fa-check text-success"></i> Product inspection available</li>
+                    </ul>
+                    <div class="alert alert-light mt-3">
+                        <small>
+                            <i class="fas fa-clock"></i>
+                            Auction ends: @Model.Product.PublishedAt?.AddDays(7).ToString("MMMM dd, yyyy")
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="fas fa-arrow-left"></i> Back to Auction
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <style>
+        .card {
+            border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .list-group-item {
+            border-left: none;
+            border-right: none;
+        }
+
+            .list-group-item:first-child {
+                border-top: none;
+            }
+
+            .list-group-item:last-child {
+                border-bottom: none;
+            }
+
+        .alert {
+            border-radius: 0.5rem;
+        }
+
+        .form-control:focus {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+    </style>
+}

@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Folder Include="AutoMapper\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Implementations\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Comet.DataAccess\Comet.DataAccess.csproj" />
+    <ProjectReference Include="..\Comet.DTO\Comet.DTO.csproj" />
     <ProjectReference Include="..\Comet.ViewModels\Comet.ViewModels.csproj" />
   </ItemGroup>
 

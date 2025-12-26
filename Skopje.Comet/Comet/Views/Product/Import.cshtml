@@ -1,0 +1,26 @@
+﻿@using Comet.ViewModels.Models;
+@model UploadExcelVM
+
+<h2>Import Products</h2>
+
+<form asp-action="Import" method="post" enctype="multipart/form-data" class="card p-4 shadow">
+    <div class="mb-3">
+        <label class="form-label">Excel file</label>
+        <input asp-for="ExcelFile" type="file" class="form-control" />
+    </div>
+
+    <div class="form-check mb-3">
+        <input asp-for="OverwriteExisting" class="form-check-input" />
+        <label class="form-check-label">Overwrite existing products</label>
+    </div>
+
+    <button class="btn btn-primary">Import</button>
+</form>
+
+@if (Model.Result != null)
+{
+    <div class="alert alert-info mt-3">
+        Imported: @Model.Result.Inserted <br />
+        Errors: @Model.Result.Errors.Count
+    </div>
+}

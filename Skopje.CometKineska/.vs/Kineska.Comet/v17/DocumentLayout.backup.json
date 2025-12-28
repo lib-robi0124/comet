@@ -1,98 +1,62 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\",
+  "WorkspaceRootPath": "D:\\comet\\Skopje.CometKineska\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dataaccess\\datacontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\datacontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Migrations\\20251228211009_vtoraprobna.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Comet.DataAccess\\Migrations\\20251228211009_vtoraprobna.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dataaccess\\extensions\\dataseedextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\extensions\\dataseedextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.domain\\entities\\bid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\bid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\comet\\skopje.cometkineska\\comet.domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.domain\\entities\\buyeruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\buyeruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\comet\\skopje.cometkineska\\comet.dataaccess\\datacontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\datacontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.domain\\entities\\libertyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\libertyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|d:\\comet\\skopje.cometkineska\\comet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|solutionrelative:comet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Migrations\\20251228205729_prvanekae.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Comet.DataAccess\\Migrations\\20251228205729_prvanekae.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.viewmodels\\models\\bidvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|solutionrelative:comet.viewmodels\\models\\bidvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8E756A58-5D9F-4068-AE4B-9E1E0A2FDEEF}|Comet.Services\\Comet.Services.csproj|d:\\comet\\skopje.cometkineska\\comet.services\\extensions\\injectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E756A58-5D9F-4068-AE4B-9E1E0A2FDEEF}|Comet.Services\\Comet.Services.csproj|solutionrelative:comet.services\\extensions\\injectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|solutionrelative:comet\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E756A58-5D9F-4068-AE4B-9E1E0A2FDEEF}|Comet.Services\\Comet.Services.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E756A58-5D9F-4068-AE4B-9E1E0A2FDEEF}|Comet.Services\\Comet.Services.csproj|solutionrelative:comet.services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E756A58-5D9F-4068-AE4B-9E1E0A2FDEEF}|Comet.Services\\Comet.Services.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E756A58-5D9F-4068-AE4B-9E1E0A2FDEEF}|Comet.Services\\Comet.Services.csproj|solutionrelative:comet.services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.viewmodels\\models\\productdetailsvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|solutionrelative:comet.viewmodels\\models\\productdetailsvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.viewmodels\\models\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|solutionrelative:comet.viewmodels\\models\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dataaccess\\excel\\iexcelparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\excel\\iexcelparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD8A261B-5AF1-4CB0-8894-EFE06C86615F}|Comet.DTO\\Comet.DTO.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dto\\dtos\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD8A261B-5AF1-4CB0-8894-EFE06C86615F}|Comet.DTO\\Comet.DTO.csproj|solutionrelative:comet.dto\\dtos\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.viewmodels\\models\\productimportvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|solutionrelative:comet.viewmodels\\models\\productimportvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dataaccess\\implementations\\bidrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\comet\\skopje.cometkineska\\comet.dataaccess\\implementations\\bidrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\implementations\\bidrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dataaccess\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|d:\\comet\\skopje.cometkineska\\comet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6F0BEA8-3FAB-47F1-AF8C-D57373F0714C}|Comet\\Comet.csproj|solutionrelative:comet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dataaccess\\interfaces\\ibidrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\interfaces\\ibidrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\comet\\skopje.cometkineska\\comet.dataaccess\\excel\\excelparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\excel\\excelparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dataaccess\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\comet\\skopje.cometkineska\\comet.dataaccess\\excel\\iexcelparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\excel\\iexcelparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dataaccess\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA9EE177-5464-4CD3-9635-EAADE2032465}|Comet.DataAccess\\Comet.DataAccess.csproj|solutionrelative:comet.dataaccess\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\comet\\skopje.cometkineska\\comet.domain\\entities\\buyeruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\buyeruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.viewmodels\\models\\uploadexcelvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|solutionrelative:comet.viewmodels\\models\\uploadexcelvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|d:\\comet\\skopje.cometkineska\\comet.viewmodels\\modelsuser\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|solutionrelative:comet.viewmodels\\modelsuser\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD8A261B-5AF1-4CB0-8894-EFE06C86615F}|Comet.DTO\\Comet.DTO.csproj|d:\\proekt-office\\comet\\skopje.cometkineska\\comet.dto\\dtos\\productexceldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD8A261B-5AF1-4CB0-8894-EFE06C86615F}|Comet.DTO\\Comet.DTO.csproj|solutionrelative:comet.dto\\dtos\\productexceldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|d:\\comet\\skopje.cometkineska\\comet.domain\\entities\\libertyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EE31A16-8812-41F8-8889-A77D80523430}|Comet.Domain\\Comet.Domain.csproj|solutionrelative:comet.domain\\entities\\libertyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|d:\\comet\\skopje.cometkineska\\comet.viewmodels\\modelsuser\\createlibertyuservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEEA63A2-DD42-4087-9B8C-BB5AE4396092}|Comet.ViewModels\\Comet.ViewModels.csproj|solutionrelative:comet.viewmodels\\modelsuser\\createlibertyuservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -102,294 +66,195 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20251228211009_vtoraprobna.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Migrations\\20251228211009_vtoraprobna.cs",
+              "RelativeDocumentMoniker": "Comet.DataAccess\\Migrations\\20251228211009_vtoraprobna.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Migrations\\20251228211009_vtoraprobna.cs",
+              "RelativeToolTip": "Comet.DataAccess\\Migrations\\20251228211009_vtoraprobna.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T21:10:09.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\DataContext\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Comet.DataAccess\\DataContext\\AppDbContext.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\DataContext\\AppDbContext.cs",
+              "RelativeToolTip": "Comet.DataAccess\\DataContext\\AppDbContext.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA4wCEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T21:01:44.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20251228205729_prvanekae.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Migrations\\20251228205729_prvanekae.cs",
+              "RelativeDocumentMoniker": "Comet.DataAccess\\Migrations\\20251228205729_prvanekae.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Migrations\\20251228205729_prvanekae.cs",
+              "RelativeToolTip": "Comet.DataAccess\\Migrations\\20251228205729_prvanekae.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T20:57:29.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\Product.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\Product.cs",
+              "RelativeToolTip": "Comet.Domain\\Entities\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T20:56:57.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BidRepository.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Implementations\\BidRepository.cs",
+              "RelativeDocumentMoniker": "Comet.DataAccess\\Implementations\\BidRepository.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Implementations\\BidRepository.cs",
+              "RelativeToolTip": "Comet.DataAccess\\Implementations\\BidRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T20:52:16.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InjectionExtensions.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.Services\\Extensions\\InjectionExtensions.cs",
+              "RelativeDocumentMoniker": "Comet.Services\\Extensions\\InjectionExtensions.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.Services\\Extensions\\InjectionExtensions.cs",
+              "RelativeToolTip": "Comet.Services\\Extensions\\InjectionExtensions.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T20:49:57.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet\\Program.cs",
+              "RelativeDocumentMoniker": "Comet\\Program.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet\\Program.cs",
+              "RelativeToolTip": "Comet\\Program.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T20:41:02.176Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\DataContext\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Comet.DataAccess\\DataContext\\AppDbContext.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\DataContext\\AppDbContext.cs",
-              "RelativeToolTip": "Comet.DataAccess\\DataContext\\AppDbContext.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAwwEgAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T13:42:24.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Bid.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\Bid.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\Bid.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\Bid.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\Bid.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T13:41:27.777Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BuyerUser.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\BuyerUser.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\BuyerUser.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\BuyerUser.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\BuyerUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T13:26:17.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LibertyUser.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\LibertyUser.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\LibertyUser.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\LibertyUser.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\LibertyUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T13:26:09.659Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\User.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\User.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T13:25:51.42Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Services\\Interfaces\\IProductService.cs",
-              "RelativeDocumentMoniker": "Comet.Services\\Interfaces\\IProductService.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Services\\Interfaces\\IProductService.cs",
-              "RelativeToolTip": "Comet.Services\\Interfaces\\IProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T11:48:14.036Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Services\\Implementations\\ProductService.cs",
-              "RelativeDocumentMoniker": "Comet.Services\\Implementations\\ProductService.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Services\\Implementations\\ProductService.cs",
-              "RelativeToolTip": "Comet.Services\\Implementations\\ProductService.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA1wAEBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T11:47:52.999Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProductDetailsVM.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\ProductDetailsVM.cs",
-              "RelativeDocumentMoniker": "Comet.ViewModels\\Models\\ProductDetailsVM.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\ProductDetailsVM.cs",
-              "RelativeToolTip": "Comet.ViewModels\\Models\\ProductDetailsVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:40:02.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BidVM.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\BidVM.cs",
-              "RelativeDocumentMoniker": "Comet.ViewModels\\Models\\BidVM.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\BidVM.cs",
-              "RelativeToolTip": "Comet.ViewModels\\Models\\BidVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:39:24.073Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DataSeedExtensions.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Extensions\\DataSeedExtensions.cs",
-              "RelativeDocumentMoniker": "Comet.DataAccess\\Extensions\\DataSeedExtensions.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Extensions\\DataSeedExtensions.cs",
-              "RelativeToolTip": "Comet.DataAccess\\Extensions\\DataSeedExtensions.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAswFcAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T12:53:21.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
               "Title": "IExcelParser.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Excel\\IExcelParser.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Excel\\IExcelParser.cs",
               "RelativeDocumentMoniker": "Comet.DataAccess\\Excel\\IExcelParser.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Excel\\IExcelParser.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Excel\\IExcelParser.cs",
               "RelativeToolTip": "Comet.DataAccess\\Excel\\IExcelParser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T11:54:33.885Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CreateProductDto.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DTO\\DTOs\\CreateProductDto.cs",
-              "RelativeDocumentMoniker": "Comet.DTO\\DTOs\\CreateProductDto.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DTO\\DTOs\\CreateProductDto.cs",
-              "RelativeToolTip": "Comet.DTO\\DTOs\\CreateProductDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T11:49:38.172Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ProductImportVM.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\ProductImportVM.cs",
-              "RelativeDocumentMoniker": "Comet.ViewModels\\Models\\ProductImportVM.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\ProductImportVM.cs",
-              "RelativeToolTip": "Comet.ViewModels\\Models\\ProductImportVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T11:46:47.656Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ProductVM.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\ProductVM.cs",
-              "RelativeDocumentMoniker": "Comet.ViewModels\\Models\\ProductVM.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\ProductVM.cs",
-              "RelativeToolTip": "Comet.ViewModels\\Models\\ProductVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:38:52.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BidRepository.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Implementations\\BidRepository.cs",
-              "RelativeDocumentMoniker": "Comet.DataAccess\\Implementations\\BidRepository.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Implementations\\BidRepository.cs",
-              "RelativeToolTip": "Comet.DataAccess\\Implementations\\BidRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T11:42:20.012Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Implementations\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Comet.DataAccess\\Implementations\\ProductRepository.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Implementations\\ProductRepository.cs",
-              "RelativeToolTip": "Comet.DataAccess\\Implementations\\ProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:42:00.876Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\Product.cs",
-              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\Product.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\Product.cs",
-              "RelativeToolTip": "Comet.Domain\\Entities\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:30:25.327Z",
+              "WhenOpened": "2025-12-28T20:48:50.783Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "AuctionController.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet\\Controllers\\AuctionController.cs",
-              "RelativeDocumentMoniker": "Comet\\Controllers\\AuctionController.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet\\Controllers\\AuctionController.cs",
-              "RelativeToolTip": "Comet\\Controllers\\AuctionController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAkwDEAAAAJAAAAAAAAAA==",
+              "Title": "ExcelParser.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Excel\\ExcelParser.cs",
+              "RelativeDocumentMoniker": "Comet.DataAccess\\Excel\\ExcelParser.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Excel\\ExcelParser.cs",
+              "RelativeToolTip": "Comet.DataAccess\\Excel\\ExcelParser.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T11:52:41.538Z"
+              "WhenOpened": "2025-12-28T20:48:38.637Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IBidRepository.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Interfaces\\IBidRepository.cs",
-              "RelativeDocumentMoniker": "Comet.DataAccess\\Interfaces\\IBidRepository.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Interfaces\\IBidRepository.cs",
-              "RelativeToolTip": "Comet.DataAccess\\Interfaces\\IBidRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:41:34.108Z"
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet\\appsettings.json",
+              "RelativeDocumentMoniker": "Comet\\appsettings.json",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet\\appsettings.json",
+              "RelativeToolTip": "Comet\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-28T20:42:41.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IProductRepository.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Interfaces\\IProductRepository.cs",
-              "RelativeDocumentMoniker": "Comet.DataAccess\\Interfaces\\IProductRepository.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Interfaces\\IProductRepository.cs",
-              "RelativeToolTip": "Comet.DataAccess\\Interfaces\\IProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "UserVM.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.ViewModels\\ModelsUser\\UserVM.cs",
+              "RelativeDocumentMoniker": "Comet.ViewModels\\ModelsUser\\UserVM.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.ViewModels\\ModelsUser\\UserVM.cs",
+              "RelativeToolTip": "Comet.ViewModels\\ModelsUser\\UserVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:40:35.978Z"
+              "WhenOpened": "2025-12-26T14:40:01.957Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Interfaces\\IRepository.cs",
-              "RelativeDocumentMoniker": "Comet.DataAccess\\Interfaces\\IRepository.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Interfaces\\IRepository.cs",
-              "RelativeToolTip": "Comet.DataAccess\\Interfaces\\IRepository.cs",
+              "DocumentIndex": 10,
+              "Title": "BuyerUser.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\BuyerUser.cs",
+              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\BuyerUser.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\BuyerUser.cs",
+              "RelativeToolTip": "Comet.Domain\\Entities\\BuyerUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-26T14:27:56.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LibertyUser.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\LibertyUser.cs",
+              "RelativeDocumentMoniker": "Comet.Domain\\Entities\\LibertyUser.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.Domain\\Entities\\LibertyUser.cs",
+              "RelativeToolTip": "Comet.Domain\\Entities\\LibertyUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:40:28.524Z"
+              "WhenOpened": "2025-12-26T14:22:46.041Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UploadExcelVM.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\UploadExcelVM.cs",
-              "RelativeDocumentMoniker": "Comet.ViewModels\\Models\\UploadExcelVM.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Models\\UploadExcelVM.cs",
-              "RelativeToolTip": "Comet.ViewModels\\Models\\UploadExcelVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "CreateLibertyUserVM.cs",
+              "DocumentMoniker": "D:\\comet\\Skopje.CometKineska\\Comet.ViewModels\\ModelsUser\\CreateLibertyUserVM.cs",
+              "RelativeDocumentMoniker": "Comet.ViewModels\\ModelsUser\\CreateLibertyUserVM.cs",
+              "ToolTip": "D:\\comet\\Skopje.CometKineska\\Comet.ViewModels\\ModelsUser\\CreateLibertyUserVM.cs",
+              "RelativeToolTip": "Comet.ViewModels\\ModelsUser\\CreateLibertyUserVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:37:10.79Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ProductExcelDto.cs",
-              "DocumentMoniker": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DTO\\DTOs\\ProductExcelDto.cs",
-              "RelativeDocumentMoniker": "Comet.DTO\\DTOs\\ProductExcelDto.cs",
-              "ToolTip": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DTO\\DTOs\\ProductExcelDto.cs",
-              "RelativeToolTip": "Comet.DTO\\DTOs\\ProductExcelDto.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAxwA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T10:36:16.374Z"
+              "WhenOpened": "2025-12-26T14:20:22.661Z"
             }
           ]
         }

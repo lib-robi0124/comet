@@ -1,5 +1,6 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Comet.DataAccess.Excel;
 using Comet.Services.Extensions;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,8 @@ builder.Services.InjectDbContext(connectionString);
 builder.Services.InjectRepositories();
 // Configure Services (if any)
 builder.Services.InjectServices();
+
+builder.Services.AddScoped<IExcelParser, ExcelParser>();
 
 var app = builder.Build();
 

@@ -19,6 +19,7 @@ namespace Comet.Services.Extensions
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IBidRepository, BidRepository>();
 
         }
         public static void InjectServices(this IServiceCollection services)

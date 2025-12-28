@@ -26,6 +26,17 @@ namespace Comet.DataAccess.DataContext
 
             // ===== Product Configuration =====
             modelBuilder.Entity<Product>()
+                .HasOne(p => p.BuyerUser)
+                .WithMany(b => b.Products)
+                .HasForeignKey(p => p.BuyerUserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.LibertyUser)
+                .WithMany(l => l.Products)
+                .HasForeignKey(p => p.LibertyUserId)
+                .OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<Product>()
                 .Property(p => p.ProductCode)
                 .IsRequired()
                 .HasMaxLength(50);
@@ -48,7 +59,8 @@ namespace Comet.DataAccess.DataContext
                 .HasMaxLength(30);
             modelBuilder.Entity<Product>()
                 .Property(p => p.ColorBottomSide)
-                .HasMaxLength(30);
+                .HasMaxLength(30)
+                .IsRequired(false);
             modelBuilder.Entity<Product>()
                 .Property(p => p.Grade)
                 .HasMaxLength(20);

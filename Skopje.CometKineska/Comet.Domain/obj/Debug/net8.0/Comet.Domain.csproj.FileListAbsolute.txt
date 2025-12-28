@@ -26,3 +26,15 @@ D:\proekt-office\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\Comet.D
 D:\proekt-office\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\refint\Comet.Domain.dll
 D:\proekt-office\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\Comet.Domain.pdb
 D:\proekt-office\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\ref\Comet.Domain.dll
+D:\comet\Skopje.CometKineska\Comet.Domain\bin\Debug\net8.0\Comet.Domain.deps.json
+D:\comet\Skopje.CometKineska\Comet.Domain\bin\Debug\net8.0\Comet.Domain.dll
+D:\comet\Skopje.CometKineska\Comet.Domain\bin\Debug\net8.0\Comet.Domain.pdb
+D:\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\Comet.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\Comet.Domain.AssemblyInfoInputs.cache
+D:\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\Comet.Domain.AssemblyInfo.cs
+D:\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\Comet.Domain.csproj.CoreCompileInputs.cache
+D:\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\Comet.Domain.sourcelink.json
+D:\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\Comet.Domain.dll
+D:\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\refint\Comet.Domain.dll
+D:\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\Comet.Domain.pdb
+D:\comet\Skopje.CometKineska\Comet.Domain\obj\Debug\net8.0\ref\Comet.Domain.dll

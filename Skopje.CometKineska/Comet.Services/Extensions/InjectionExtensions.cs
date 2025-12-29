@@ -26,6 +26,7 @@ namespace Comet.Services.Extensions
         {   services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductImportService, ProductImportService>();
             services.AddScoped<IAuctionService, AuctionService>();
+            services.AddScoped<IUserService, UserService>();
         }
     }
 }

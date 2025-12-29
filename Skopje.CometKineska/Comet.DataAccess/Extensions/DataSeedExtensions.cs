@@ -85,17 +85,15 @@ namespace Comet.DataAccess.Extensions
                     Email = "customer1@buyer.com",
                     Password = customerPasswordHash, 
                     RoleId = 3, 
-                    CompanyName = "SteelWorks Inc",
-                    ContactPerson = "John Smith"
+                    CompanyName = "SteelWorks Inc"
                 },
                 new BuyerUser
                 {
                     Id = 4,
                     Email = "customer2@buyer.com",
-                    Password = "hashed_password_here", // You should hash this password
-                    RoleId = 3, // Customer role
-                    CompanyName = "MetalPro Industries",
-                    ContactPerson = "Jane Doe"
+                    Password = customerPasswordHash, 
+                    RoleId = 3, 
+                    CompanyName = "MetalPro Industries"
                 }
             );
         }

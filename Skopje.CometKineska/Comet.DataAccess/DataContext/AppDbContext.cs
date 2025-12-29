@@ -70,16 +70,23 @@ namespace Comet.DataAccess.DataContext
             modelBuilder.Entity<Product>()
                 .Property(p => p.Defects)
                 .HasMaxLength(500);
+            modelBuilder.Entity<Product>()
+                .Property(p => p.GrossWeight)
+                .HasPrecision(18, 2);
+            modelBuilder.Entity<Product>()
+                .Property(p => p.NetWeight)
+                .HasPrecision(18, 2);
+            modelBuilder.Entity<Product>()
+                .Property(p => p.Thickness)
+                .HasPrecision(18, 2);
+            modelBuilder.Entity<Product>()
+                .Property(p => p.MinimumBidPrice)
+                .HasPrecision(18, 2);
             // ===== User Configuration =====
-            
-            modelBuilder.Entity<User>()
-                .ToTable("Users"); 
-            modelBuilder.Entity<LibertyUser>()
-                .ToTable("LibertyUsers"); 
-            modelBuilder.Entity<BuyerUser>()
-                .ToTable("BuyerUsers");
-            modelBuilder.Entity<User>()
-                .HasKey(u => u.Id);
+            modelBuilder.Entity<User>().ToTable("Users"); 
+            modelBuilder.Entity<LibertyUser>().ToTable("LibertyUsers"); 
+            modelBuilder.Entity<BuyerUser>().ToTable("BuyerUsers");
+            modelBuilder.Entity<User>().HasKey(u => u.Id);
             modelBuilder.Entity<User>()
                     .Property(u => u.Email)
                     .IsRequired()
@@ -92,13 +99,13 @@ namespace Comet.DataAccess.DataContext
                     .IsRequired()
                     .HasMaxLength(500);
             modelBuilder.Entity<User>()
-                    .HasIndex(u => u.Email)
-                    .IsUnique();
-            modelBuilder.Entity<User>()
                     .HasOne(u => u.Role)
                     .WithMany(r => r.Users)
                     .HasForeignKey(u => u.RoleId)
                     .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<User>()
+                   .Property(u => u.CreatedDate)
+                   .HasDefaultValueSql("GETUTCDATE()");
             // ===== LibertyUser Configuration =====
             modelBuilder.Entity<LibertyUser>()
                 .Property(lu => lu.FullName)
@@ -107,10 +114,6 @@ namespace Comet.DataAccess.DataContext
             modelBuilder.Entity<LibertyUser>()
                 .HasIndex(lu => lu.FullName)
                 .IsUnique(false);
-            modelBuilder.Entity<LibertyUser>()
-                .HasMany(lu => lu.Products)
-                .WithOne()
-                .OnDelete(DeleteBehavior.SetNull);
             // ===== BuyerUser Configuration =====
             modelBuilder.Entity<BuyerUser>()
                 .Property(bu => bu.CompanyName)
@@ -119,20 +122,11 @@ namespace Comet.DataAccess.DataContext
             modelBuilder.Entity<BuyerUser>()
                 .HasIndex(bu => bu.CompanyName)
                 .IsUnique(false);
-            modelBuilder.Entity<BuyerUser>()
-                .Property(bu => bu.ContactPerson)
-                .IsRequired()
-                .HasMaxLength(200);
-            modelBuilder.Entity<BuyerUser>()
-                .HasMany(bu => bu.Products)
-                .WithOne()
-                .OnDelete(DeleteBehavior.SetNull);
             // Bid configuration
             modelBuilder.Entity<Bid>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.BidderName).IsRequired().HasMaxLength(100);
-                entity.Property(e => e.BidderEmail).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.CompanyName).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.Amount).HasColumnType("decimal(18,2)");
                 entity.Property(e => e.BidTime).HasDefaultValueSql("GETUTCDATE()");
 
@@ -141,9 +135,11 @@ namespace Comet.DataAccess.DataContext
                       .HasForeignKey(e => e.ProductId)
                       .OnDelete(DeleteBehavior.Cascade);
             });
-            modelBuilder.Entity<User>()
-                .Property(u => u.CreatedDate)
-                .HasDefaultValueSql("GETUTCDATE()");
+            modelBuilder.Entity<Bid>()
+                     .HasOne(b => b.BuyerUser)
+                     .WithMany(u => u.Bids)
+                     .HasForeignKey(b => b.BuyerUserId)
+                     .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Bid>()
                 .Property(b => b.CreatedDate)

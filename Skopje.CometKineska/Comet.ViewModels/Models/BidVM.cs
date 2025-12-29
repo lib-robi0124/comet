@@ -14,12 +14,8 @@ namespace Comet.ViewModels.Models
         [Required(ErrorMessage = "Name is required")]
         [Display(Name = "Your Name")]
         [StringLength(100)]
-        public string BidderName { get; set; } = string.Empty;
-
-        [Required(ErrorMessage = "Email is required")]
-        [EmailAddress(ErrorMessage = "Invalid email address")]
-        [Display(Name = "Email Address")]
-        public string BidderEmail { get; set; } = string.Empty;
+        public string CompanyName { get; set; } = string.Empty;
+        public string ProductCode { get; set; } = string.Empty;
         public DateTime? BidTime { get; set; }
     }
 }

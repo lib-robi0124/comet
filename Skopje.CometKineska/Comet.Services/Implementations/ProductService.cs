@@ -182,8 +182,7 @@ namespace Comet.Services.Implementations
                     .Select(b => new BidVM
                     {
                         Amount = b.Amount,
-                        BidderName = b.BidderName,
-                        BidderEmail = b.BidderEmail
+                        CompanyName = b.CompanyName
                     }).ToList()
             };
             return viewModel;

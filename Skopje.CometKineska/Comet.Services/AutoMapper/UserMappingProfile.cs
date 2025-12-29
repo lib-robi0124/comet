@@ -4,9 +4,9 @@ using Comet.ViewModels.ModelsUser;
 
 namespace Comet.Services.AutoMapper
 {
-    public class UserProfile : Profile
+    public class UserMappingProfile : Profile
     {
-        public UserProfile()
+        public UserMappingProfile()
         {
             CreateMap<BuyerUser, BuyerUserVM>();
             CreateMap<LibertyUser, LibertyUserVM>();

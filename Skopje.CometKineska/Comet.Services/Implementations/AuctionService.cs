@@ -7,20 +7,20 @@ using Microsoft.Extensions.Logging;
 namespace Comet.Services.Implementations
 {
     public class AuctionService : IAuctionService
-        {
-            private readonly IBidRepository _bidRepository;
-            private readonly IProductRepository _productRepository;
-            private readonly ILogger<AuctionService> _logger;
+    {
+        private readonly IBidRepository _bidRepository;
+        private readonly IProductRepository _productRepository;
+        private readonly ILogger<AuctionService> _logger;
 
-            public AuctionService(
-                IBidRepository bidRepository,
-                IProductRepository productRepository,
-                ILogger<AuctionService> logger)
-            {
-                _bidRepository = bidRepository;
-                _productRepository = productRepository;
-                _logger = logger;
-            }
+        public AuctionService(
+            IBidRepository bidRepository,
+            IProductRepository productRepository,
+            ILogger<AuctionService> logger)
+        {
+            _bidRepository = bidRepository;
+            _productRepository = productRepository;
+            _logger = logger;
+        }
 
         public async Task<BidResult> PlaceBidAsync(BidVM bidViewModel)
         {
@@ -43,19 +43,16 @@ namespace Comet.Services.Implementations
                     Success = false,
                     Message = $"Bid must be at least ${minimumBid:F2}"
                 };
-
             try
             {
                 var bid = new Bid
                 {
                     ProductId = bidViewModel.ProductId,
                     Amount = bidViewModel.Amount,
-                    BidderName = bidViewModel.BidderName,
-                    BidderEmail = bidViewModel.BidderEmail,
+                    CompanyName = bidViewModel.CompanyName,
                     BidTime = DateTime.UtcNow,
                     IsWinningBid = false
                 };
-
                 await _bidRepository.AddAsync(bid);
                 _logger.LogInformation("New bid placed: ${Amount} on product {ProductId}", bid.Amount, product.Id);
 
@@ -73,23 +70,19 @@ namespace Comet.Services.Implementations
                 return new BidResult { Success = false, Message = "Error placing bid. Please try again." };
             }
         }
-
         public async Task<IEnumerable<BidVM>> GetProductBidsAsync(int productId)
         {
             var bids = await _bidRepository.GetBidsByProductIdAsync(productId);
             return bids.Select(b => new BidVM
             {
                 Amount = b.Amount,
-                BidderName = b.BidderName,
-                BidderEmail = b.BidderEmail
+                CompanyName = b.CompanyName
             });
         }
-
         public async Task<decimal> GetCurrentHighestBidAsync(int productId)
         {
             return await _bidRepository.GetCurrentHighestBidAsync(productId);
         }
-
         public async Task<bool> UpdateWinningBidAsync(int productId)
         {
             var highestBid = await _bidRepository.GetHighestBidAsync(productId);
@@ -102,28 +95,27 @@ namespace Comet.Services.Implementations
             {
                 bid.IsWinningBid = false;
             }
+            // Set the highest bid as winning
+            highestBid.IsWinningBid = true;
 
-        // Set the highest bid as winning
-        highestBid.IsWinningBid = true;
-
-        try
-        {
-            await _bidRepository.UpdateAsync(highestBid);
-            return true;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error updating winning bid");
-            return false;
+            try
+            {
+                await _bidRepository.UpdateAsync(highestBid);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating winning bid");
+                return false;
+            }
         }
     }
-}
-
-public class BidResult
-{
-    public bool Success { get; set; }
-    public string Message { get; set; } = string.Empty;
-    public int? BidId { get; set; }
-    public decimal CurrentHighestBid { get; set; }
-}
+        public class BidResult
+        {
+            public bool Success { get; set; }
+            public string Message { get; set; } = string.Empty;
+            public int? BidId { get; set; }
+            public decimal CurrentHighestBid { get; set; }
+        }
+    
 }

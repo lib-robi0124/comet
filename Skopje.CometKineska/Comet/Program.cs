@@ -1,4 +1,5 @@
 using Comet.DataAccess.Excel;
+using Comet.Services.AutoMapper;
 using Comet.Services.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
@@ -21,6 +22,15 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.ExpireTimeSpan = TimeSpan.FromHours(8);
         options.SlidingExpiration = true;
     });
+// Authorization policies
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("BuyerOnly", policy =>
+        policy.RequireRole("BuyerUser"));
+
+    options.AddPolicy("AdminOnly", policy =>
+        policy.RequireRole("LibertyUser", "Admin"));
+});
 // Add session services
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -38,6 +48,7 @@ builder.Services.InjectDbContext(connectionString);
 builder.Services.InjectRepositories();
 // Configure Services (if any)
 builder.Services.InjectServices();
+builder.Services.AddAutoMapper(cfg => cfg.AddProfile<UserMappingProfile>());
 
 builder.Services.AddScoped<IExcelParser, ExcelParser>();
 

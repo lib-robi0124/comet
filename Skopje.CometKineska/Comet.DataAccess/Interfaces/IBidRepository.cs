@@ -7,7 +7,7 @@ namespace Comet.DataAccess.Interfaces
         Task<IEnumerable<Bid>> GetBidsByProductIdAsync(int productId);
         Task<Bid?> GetHighestBidAsync(int productId);
         Task<decimal> GetCurrentHighestBidAsync(int productId);
-        Task<bool> HasUserBidOnProductAsync(int productId, string email);
-        Task<IEnumerable<Bid>> GetUserBidsAsync(string email);
+        Task<bool> HasUserBidOnProductAsync(int productId, int buyerUserId);
+        Task<IEnumerable<Bid>> GetUserBidsAsync(int buyerUserId);
     }
 }

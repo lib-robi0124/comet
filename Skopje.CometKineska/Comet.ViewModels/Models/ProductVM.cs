@@ -50,6 +50,12 @@ namespace Comet.ViewModels.Models
         [Display(Name = "Published")]
         public bool IsPublished { get; set; }
 
+        [Display(Name = "Current Highest Bid (Eur)")]
+        public decimal CurrentHighestBid { get; set; }
+        [Display(Name = "Lyberty User")]
+        public string FullName { get; set; } = string.Empty;
+        [Display(Name = "Buyer User")]
+        public string CompanyName { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public DateTime? PublishedAt { get; set; }
     }

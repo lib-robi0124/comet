@@ -7,8 +7,8 @@ namespace Comet.Domain.Entities
     {
         public int Id { get; set; }
         public int? LibertyUserId { get; set; }
-        public int? BuyerUserId { get; set; }
         public LibertyUser? LibertyUser { get; set; }
+        public int? BuyerUserId { get; set; }
         public BuyerUser? BuyerUser { get; set; }
         public string ProductCode { get; set; } = string.Empty;
         public ProductCategory ProductCategory { get; set; }

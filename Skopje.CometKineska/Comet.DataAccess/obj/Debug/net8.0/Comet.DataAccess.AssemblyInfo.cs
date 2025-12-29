@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Comet.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb973e2b9bddc8a14233f9367f1a5b7b2ed5a935")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b510fdbd4ffbefbae91c2ddafe1a01e0f6ac161")]
 [assembly: System.Reflection.AssemblyProductAttribute("Comet.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Comet.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

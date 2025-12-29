@@ -1,6 +1,7 @@
 ﻿using Comet.DataAccess.DataContext;
 using Comet.DataAccess.Interfaces;
 using Comet.Domain.Entities;
+using Comet.ViewModels.ModelsUser;
 using Microsoft.EntityFrameworkCore;
 
 namespace Comet.DataAccess.Implementations
@@ -69,15 +70,15 @@ namespace Comet.DataAccess.Implementations
             var highestBid = await GetHighestBidAsync(productId);
             return highestBid?.Amount ?? 0;
         }
-        public async Task<bool> HasUserBidOnProductAsync(int productId, string email)
+        public async Task<bool> HasUserBidOnProductAsync(int productId, int buyerUserId)
         {
             return await _context.Bids
-                .AnyAsync(b => b.ProductId == productId && b.BidderEmail == email);
+                .AnyAsync(b => b.ProductId == productId && b.BuyerUserId == buyerUserId);
         }
-        public async Task<IEnumerable<Bid>> GetUserBidsAsync(string email)
+        public async Task<IEnumerable<Bid>> GetUserBidsAsync(int buyerUserId)
         {
             return await _context.Bids
-                .Where(b => b.BidderEmail == email)
+                .Where(b => b.BuyerUserId == buyerUserId)
                 .Include(b => b.Product)
                 .OrderByDescending(b => b.BidTime)
                 .ToListAsync();

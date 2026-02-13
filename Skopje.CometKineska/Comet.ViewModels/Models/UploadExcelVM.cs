@@ -7,7 +7,7 @@ namespace Comet.ViewModels.Models
     {
         [Required(ErrorMessage = "Excel file is required")]
         [Display(Name = "Excel File")]
-        [FileExtensions(Extensions = ".xlsx,.xls", ErrorMessage = "Please upload an Excel file (.xlsx or .xls)")]
+        [FileExtensions(Extensions = "xlsx,xls", ErrorMessage = "Please upload an Excel file (.xlsx or .xls)")]
         public IFormFile ExcelFile { get; set; } = null!;
 
         [Display(Name = "Overwrite existing products?")]

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Comet.Domain.csproj": {}
+    "D:\\VER_proekt-office\\Comet3_kineska\\Comet.Domain\\Comet.Domain.csproj": {}
   },
   "projects": {
-    "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Comet.Domain.csproj": {
+    "D:\\VER_proekt-office\\Comet3_kineska\\Comet.Domain\\Comet.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Comet.Domain.csproj",
+        "projectUniqueName": "D:\\VER_proekt-office\\Comet3_kineska\\Comet.Domain\\Comet.Domain.csproj",
         "projectName": "Comet.Domain",
-        "projectPath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\Comet.Domain.csproj",
+        "projectPath": "D:\\VER_proekt-office\\Comet3_kineska\\Comet.Domain\\Comet.Domain.csproj",
         "packagesPath": "C:\\Users\\Robertr2\\.nuget\\packages\\",
-        "outputPath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Domain\\obj\\",
+        "outputPath": "D:\\VER_proekt-office\\Comet3_kineska\\Comet.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

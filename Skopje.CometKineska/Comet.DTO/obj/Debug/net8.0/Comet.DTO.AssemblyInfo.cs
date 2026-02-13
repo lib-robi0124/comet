@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Comet.DTO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b510fdbd4ffbefbae91c2ddafe1a01e0f6ac161")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Comet.DTO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Comet.DTO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

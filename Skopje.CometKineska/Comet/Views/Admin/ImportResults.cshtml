@@ -1,0 +1,278 @@
+﻿@model ImportResultsVM
+@{
+    ViewData["Title"] = "Import Results";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-1">
+                <i class="fas fa-clipboard-check me-2 text-primary"></i>Import Results
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a asp-action="Index">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a asp-action="ImportProducts">Import Products</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Results</li>
+                </ol>
+            </nav>
+        </div>
+        <div>
+            <a asp-action="ImportProducts" class="btn btn-primary">
+                <i class="fas fa-upload me-1"></i>Import Another File
+            </a>
+        </div>
+    </div>
+
+    @if (Model.Result != null)
+    {
+        <!-- Status Alert -->
+        @if (Model.Result.Success && Model.Result.FailedRows == 0)
+        {
+            <div class="alert alert-success border-0 shadow-sm mb-4">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle fs-3 me-3"></i>
+                    </div>
+                    <div>
+                        <h5 class="alert-heading mb-1">Import Completed Successfully!</h5>
+                        <p class="mb-0">
+                            Successfully imported <strong>@Model.Result.SuccessfullyImported</strong> products
+                            from <strong>@Model.FileName</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (Model.Result.FailedRows > 0 && Model.Result.SuccessfullyImported > 0)
+        {
+            <div class="alert alert-warning border-0 shadow-sm mb-4">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle fs-3 me-3"></i>
+                    </div>
+                    <div>
+                        <h5 class="alert-heading mb-1">Import Completed with Warnings</h5>
+                        <p class="mb-0">
+                            Imported <strong>@Model.Result.SuccessfullyImported</strong> products,
+                            but <strong class="text-danger">@Model.Result.FailedRows</strong> rows failed.
+                            Review the errors below.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-danger border-0 shadow-sm mb-4">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-times-circle fs-3 me-3"></i>
+                    </div>
+                    <div>
+                        <h5 class="alert-heading mb-1">Import Failed</h5>
+                        <p class="mb-0">No products were imported. Please check the errors below and try again.</p>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <!-- Summary Cards -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 bg-info bg-opacity-10 p-3 rounded-3">
+                                <i class="fas fa-file-excel fs-3 text-info"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="text-muted mb-1">File Name</h6>
+                                <p class="mb-0 fw-bold text-truncate" style="max-width: 200px;">
+                                    @Model.FileName
+                                </p>
+                                <small class="text-muted">@Model.ImportTime</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-3">
+                                <i class="fas fa-list fs-3 text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="text-muted mb-1">Total Rows</h6>
+                                <h3 class="mb-0">@Model.Result.TotalRows</h3>
+                                <small class="text-muted">processed</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 bg-success bg-opacity-10 p-3 rounded-3">
+                                <i class="fas fa-check-circle fs-3 text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="text-muted mb-1">Successfully Imported</h6>
+                                <h3 class="mb-0 text-success">@Model.Result.SuccessfullyImported</h3>
+                                <small class="text-muted">@Model.SuccessPercentage% success rate</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 bg-danger bg-opacity-10 p-3 rounded-3">
+                                <i class="fas fa-times-circle fs-3 text-danger"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="text-muted mb-1">Failed Rows</h6>
+                                <h3 class="mb-0 text-danger">@Model.Result.FailedRows</h3>
+                                <small class="text-muted">need attention</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+                <h6 class="mb-3">Import Progress</h6>
+                <div class="progress" style="height: 25px;">
+                    <div class="progress-bar bg-success"
+                         style="width: @Model.SuccessPercentage%"
+                         role="progressbar">
+                        @Model.SuccessPercentage% Success
+                    </div>
+                    <div class="progress-bar bg-danger"
+                         style="width: @(100 - Model.SuccessPercentage)%"
+                         role="progressbar">
+                        @(100 - Model.SuccessPercentage)% Failed
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                    <small class="text-muted">Processing Time: @Model.Result.ProcessingTime.TotalSeconds.ToString("F2") seconds</small>
+                    <small class="text-muted">@DateTime.Now.ToString("MMM dd, yyyy HH:mm:ss")</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Details -->
+        @if (Model.HasErrors)
+        {
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-0 pt-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">
+                            <i class="fas fa-exclamation-circle me-2 text-danger"></i>
+                            Error Details (@Model.Result.Errors.Count)
+                        </h5>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="exportErrors()">
+                            <i class="fas fa-download me-1"></i>Export Errors
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle" id="errorsTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Row</th>
+                                    <th>Product Code</th>
+                                    <th>Error Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var error in Model.Result.Errors)
+                                {
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-secondary">@(error.RowNumber > 0 ? error.RowNumber.ToString() : "-")</span>
+                                        </td>
+                                        <td>
+                                            <code>@(!string.IsNullOrEmpty(error.ProductCode) ? error.ProductCode : "N/A")</code>
+                                        </td>
+                                        <td>
+                                            <span class="text-danger">
+                                                <i class="fas fa-exclamation-triangle me-1"></i>
+                                                @error.ErrorMessage
+                                            </span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <!-- No Results -->
+        <div class="text-center py-5">
+            <div class="mb-4">
+                <i class="fas fa-search fa-4x text-muted opacity-50"></i>
+            </div>
+            <h5 class="text-muted mb-3">No Import Results Found</h5>
+            <p class="text-muted mb-4">There are no import results to display at this time.</p>
+            <a asp-action="ImportProducts" class="btn btn-primary px-4">
+                <i class="fas fa-upload me-2"></i>Start New Import
+            </a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Export errors to CSV
+        window.exportErrors = function() {
+            const errors = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Result?.Errors ?? new List<ImportError>()));
+
+            if (!errors || errors.length === 0) {
+                alert('No errors to export');
+                return;
+            }
+
+            let csv = 'Row Number,Product Code,Error Message\n';
+            errors.forEach(error => {
+                csv += `${error.rowNumber || ''},"${error.productCode || ''}","${error.errorMessage || ''}"\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `import_errors_${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+        }
+
+        // Auto-refresh page after 30 seconds if import is still processing
+        @if (Model.Result != null && Model.Result.ProcessingTime.TotalSeconds > 5)
+        {
+                <text>
+                setTimeout(function() {
+                    location.reload();
+                }, 30000);
+                </text>
+        }
+    </script>
+}

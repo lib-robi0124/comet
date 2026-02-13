@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KMyYzehWdSU=",
+  "dgSpecHash": "AcGVjjl8zQg=",
   "success": true,
-  "projectFilePath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Comet.ViewModels.csproj",
+  "projectFilePath": "D:\\VER_proekt-office\\Comet3_kineska\\Comet.ViewModels\\Comet.ViewModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Robertr2\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Robertr2\\.nuget\\packages\\linqtoexcel\\1.11.0\\linqtoexcel.1.11.0.nupkg.sha512",
@@ -16,9 +16,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'LinqToExcel 1.11.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Comet.ViewModels.csproj",
+      "projectPath": "D:\\VER_proekt-office\\Comet3_kineska\\Comet.ViewModels\\Comet.ViewModels.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.ViewModels\\Comet.ViewModels.csproj",
+      "filePath": "D:\\VER_proekt-office\\Comet3_kineska\\Comet.ViewModels\\Comet.ViewModels.csproj",
       "libraryId": "LinqToExcel",
       "targetGraphs": [
         "net8.0"

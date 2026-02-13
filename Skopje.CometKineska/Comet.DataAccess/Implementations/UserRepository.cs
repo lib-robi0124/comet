@@ -1,16 +1,20 @@
-﻿using Comet.DataAccess.DataContext;
+using Comet.DataAccess.DataContext;
 using Comet.DataAccess.Interfaces;
 using Comet.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SendGrid.Helpers.Errors.Model;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace Comet.DataAccess.Implementations
 {
     public class UserRepository : Repository<User>, IUserRepository
     {
-        public UserRepository(AppDbContext context) : base(context) { }
+        private readonly PasswordHasher<User> _passwordHasher;
+
+        public UserRepository(AppDbContext context) : base(context)
+        {
+            _passwordHasher = new PasswordHasher<User>();
+        }
 
         public async Task<User?> AuthenticateAsync(string email, string password)
         {
@@ -76,18 +80,13 @@ namespace Comet.DataAccess.Implementations
         }
         private string HashPassword(string password)
         {
-            using var sha256 = SHA256.Create();
-            var bytes = Encoding.UTF8.GetBytes(password);
-            var hash = sha256.ComputeHash(bytes);
-            return Convert.ToBase64String(hash);
+            return _passwordHasher.HashPassword(null, password);
         }
+
         private bool VerifyPassword(string password, string hashedPassword)
         {
-            using var sha256 = SHA256.Create();
-            var bytes = Encoding.UTF8.GetBytes(password);
-            var hash = sha256.ComputeHash(bytes);
-            var hashedInput = Convert.ToBase64String(hash);
-            return hashedInput == hashedPassword;
+            var result = _passwordHasher.VerifyHashedPassword(null, hashedPassword, password);
+            return result == PasswordVerificationResult.Success || result == PasswordVerificationResult.SuccessRehashNeeded;
         }
     }
 }

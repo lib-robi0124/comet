@@ -1,0 +1,220 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<!-- Admin Sidebar CSS -->
+<style>
+    .admin-wrapper {
+        display: flex;
+        min-height: calc(100vh - 60px);
+    }
+
+    .admin-sidebar {
+        width: 260px;
+        background: linear-gradient(180deg, #2c3e50 0%, #1a2634 100%);
+        color: #fff;
+        transition: all 0.3s;
+        position: sticky;
+        top: 60px;
+        height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+
+        .admin-sidebar.collapsed {
+            width: 70px;
+        }
+
+    .admin-content {
+        flex: 1;
+        background-color: #f8f9fc;
+        padding: 20px;
+    }
+
+    .admin-sidebar .nav-link {
+        color: rgba(255,255,255,0.8);
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin: 4px 10px;
+        transition: all 0.2s;
+    }
+
+        .admin-sidebar .nav-link:hover,
+        .admin-sidebar .nav-link.active {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        .admin-sidebar .nav-link i {
+            width: 24px;
+            text-align: center;
+            margin-right: 12px;
+        }
+
+    .admin-sidebar.collapsed .nav-link span {
+        display: none;
+    }
+
+    .admin-sidebar.collapsed .nav-link i {
+        margin-right: 0;
+    }
+
+    .admin-sidebar .sidebar-header {
+        padding: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .admin-sidebar .sidebar-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .admin-top-bar {
+        background: white;
+        padding: 12px 24px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+</style>
+
+<div class="admin-wrapper">
+    <!-- Sidebar -->
+    <div class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <h5 class="mb-0 text-white">
+                <i class="fas fa-shield-alt me-2"></i>
+                <span>Admin Panel</span>
+            </h5>
+            <small class="text-white-50">@User.Identity?.Name</small>
+        </div>
+
+        <div class="mt-3">
+            <!-- Dashboard -->
+            <a asp-action="Index" class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <!-- Products -->
+            <a asp-action="Products" class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Products" ? "active" : "")">
+                <i class="fas fa-boxes"></i>
+                <span>Products</span>
+            </a>
+
+            <!-- Import Products -->
+            <a asp-action="ImportProducts" class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "ImportProducts" ? "active" : "")">
+                <i class="fas fa-file-import"></i>
+                <span>Import Products</span>
+            </a>
+
+            <!-- Users (Future) -->
+            <a href="#" class="nav-link">
+                <i class="fas fa-users"></i>
+                <span>Users</span>
+            </a>
+
+            <!-- Reports (Future) -->
+            <a href="#" class="nav-link">
+                <i class="fas fa-chart-bar"></i>
+                <span>Reports</span>
+            </a>
+
+            <!-- Settings (Future) -->
+            <a href="#" class="nav-link">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <form method="post" asp-controller="Home" asp-action="Logout" class="d-inline">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="nav-link text-danger border-0 bg-transparent w-100 text-start">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="admin-content">
+        <!-- Top Bar -->
+        <div class="admin-top-bar">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-link text-dark p-0 me-3" onclick="toggleSidebar()">
+                    <i class="fas fa-bars fs-5"></i>
+                </button>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a asp-action="Index" class="text-decoration-none">Admin</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            @ViewData["Title"]
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-bell me-1"></i>
+                        <span class="badge bg-danger">3</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <h6 class="dropdown-header">Notifications</h6>
+                        <a class="dropdown-item" href="#">Import completed: 150 products</a>
+                        <a class="dropdown-item" href="#">5 products need review</a>
+                        <a class="dropdown-item" href="#">System update available</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle me-1"></i>
+                        @User.Identity?.Name?.Split('@')[0]
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <h6 class="dropdown-header">Account</h6>
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <form method="post" asp-controller="Home" asp-action="Logout" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="dropdown-item text-danger border-0 bg-transparent w-100 text-start">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="mt-4">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleSidebar() {
+        document.getElementById('adminSidebar').classList.toggle('collapsed');
+    }
+
+    // Active menu highlighting
+    document.querySelectorAll('.admin-sidebar .nav-link').forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
+@await RenderSectionAsync("Scripts", required: false)

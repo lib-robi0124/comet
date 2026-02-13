@@ -1,0 +1,431 @@
+﻿@model AdminProductImportVM
+@{
+    ViewData["Title"] = "Import Products";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-1">
+                <i class="fas fa-file-excel me-2 text-success"></i>Import Products
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a asp-action="Index">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Import Products</li>
+                </ol>
+            </nav>
+        </div>
+        <a asp-action="DownloadTemplate" class="btn btn-outline-success">
+            <i class="fas fa-download me-1"></i>Download Template
+        </a>
+    </div>
+
+    <!-- Instructions Alert -->
+    <div class="alert alert-info alert-dismissible fade show shadow-sm border-0" role="alert">
+        <div class="d-flex">
+            <div class="flex-shrink-0">
+                <i class="fas fa-info-circle fs-4 me-3"></i>
+            </div>
+            <div>
+                <h6 class="alert-heading">📋 Excel File Requirements</h6>
+                <p class="mb-0">
+                    Upload an Excel file (.xlsx or .xls) with the following columns in the first row.
+                    <a href="#" data-bs-toggle="collapse" data-bs-target="#columnList" class="alert-link">View column list</a>
+                </p>
+
+                <div class="collapse mt-2" id="columnList">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><span class="badge bg-secondary me-2">A</span> Product Code *</li>
+                                <li><span class="badge bg-secondary me-2">B</span> Category *</li>
+                                <li><span class="badge bg-secondary me-2">C</span> Product Type *</li>
+                                <li><span class="badge bg-secondary me-2">D</span> Color Top Side</li>
+                                <li><span class="badge bg-secondary me-2">E</span> Color Bottom Side</li>
+                                <li><span class="badge bg-secondary me-2">F</span> Grade</li>
+                                <li><span class="badge bg-secondary me-2">G</span> Zinc Coating</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><span class="badge bg-secondary me-2">H</span> Thickness (mm)</li>
+                                <li><span class="badge bg-secondary me-2">I</span> Width (mm)</li>
+                                <li><span class="badge bg-secondary me-2">J</span> Gross Weight (kg)</li>
+                                <li><span class="badge bg-secondary me-2">K</span> Net Weight (kg)</li>
+                                <li><span class="badge bg-secondary me-2">L</span> Defects</li>
+                                <li><span class="badge bg-secondary me-2">M</span> Price ($)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="mt-2 mb-0 small text-muted">* Required fields. Category and Type must match the predefined values.</p>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <!-- Last Import Info -->
+    @if (Model.LastImportDate.HasValue)
+    {
+        <div class="alert alert-secondary shadow-sm border-0 mb-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-clock me-2"></i>
+                <span>Last import: <strong>@Model.LastImportDate.Value.ToString("MMMM dd, yyyy HH:mm")</strong></span>
+                <span class="mx-2">|</span>
+                <span>File: <strong>@Model.ImportHistory.FirstOrDefault()?.FileName</strong></span>
+                <span class="mx-2">|</span>
+                <span>Imported: <strong class="text-success">@Model.ImportHistory.FirstOrDefault()?.SuccessCount</strong></span>
+                <a href="#" class="btn btn-sm btn-link ms-3" data-bs-toggle="modal" data-bs-target="#importHistoryModal">
+                    View History <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    }
+
+    <!-- Main Upload Card -->
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card border-0 shadow-lg">
+                <div class="card-header bg-white border-0 pt-4 pb-0">
+                    <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#upload">
+                                <i class="fas fa-upload me-2"></i>Upload File
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#history">
+                                <i class="fas fa-history me-2"></i>Import History
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body p-4">
+                    <div class="tab-content">
+                        <!-- Upload Tab -->
+                        <div class="tab-pane fade show active" id="upload">
+                            <form asp-action="ImportProducts" method="post" enctype="multipart/form-data" id="importForm">
+                                @Html.AntiForgeryToken()
+
+                                <!-- File Upload Area -->
+                                <div class="upload-area border border-2 border-dashed rounded-3 p-5 mb-4 text-center"
+                                     id="dropZone">
+                                    <div class="upload-icon mb-3">
+                                        <i class="fas fa-cloud-upload-alt fa-3x text-primary opacity-50"></i>
+                                    </div>
+                                    <h5 class="mb-2">Drag & drop your Excel file here</h5>
+                                    <p class="text-muted mb-3">or</p>
+                                    <label for="ExcelFile" class="btn btn-primary px-4">
+                                        <i class="fas fa-folder-open me-2"></i>Browse Files
+                                    </label>
+                                    <input asp-for="ExcelFile"
+                                           class="d-none"
+                                           id="ExcelFile"
+                                           accept=".xlsx,.xls"
+                                           onchange="handleFileSelect(this)">
+                                    <p class="text-muted small mt-3 mb-0">
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        Supported formats: .xlsx, .xls (Max size: 10MB)
+                                    </p>
+                                    <span asp-validation-for="ExcelFile" class="text-danger d-block mt-2"></span>
+                                </div>
+
+                                <!-- Selected File Preview -->
+                                <div id="filePreview" class="card bg-light border-0 mb-4 d-none">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <i class="fas fa-file-excel fa-2x text-success"></i>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-1" id="fileName"></h6>
+                                                <small class="text-muted" id="fileSize"></small>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeFile()">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Import Options -->
+                                <div class="card bg-light border-0 mb-4">
+                                    <div class="card-body">
+                                        <h6 class="mb-3">
+                                            <i class="fas fa-cog me-2"></i>Import Options
+                                        </h6>
+                                        <div class="form-check mb-2">
+                                            <input asp-for="OverwriteExisting" class="form-check-input" />
+                                            <label asp-for="OverwriteExisting" class="form-check-label">
+                                                <strong>Overwrite existing products</strong>
+                                                <span class="d-block small text-muted">
+                                                    If enabled, products with matching codes will be updated.
+                                                    Otherwise, duplicates will be skipped.
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input asp-for="SendEmailNotification" class="form-check-input" />
+                                            <label asp-for="SendEmailNotification" class="form-check-label">
+                                                <strong>Send email notification when complete</strong>
+                                                <span class="d-block small text-muted">
+                                                    Receive an email with the import results
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input asp-for="ValidateOnly" class="form-check-input" />
+                                            <label asp-for="ValidateOnly" class="form-check-label">
+                                                <strong>Validate only (test mode)</strong>
+                                                <span class="d-block small text-muted">
+                                                    Check the file for errors without saving to database
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit Buttons -->
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="reset" class="btn btn-outline-secondary px-4">
+                                        <i class="fas fa-undo me-2"></i>Clear
+                                    </button>
+                                    <button type="submit" class="btn btn-success px-5" id="submitBtn" disabled>
+                                        <i class="fas fa-file-import me-2"></i>Import Products
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- History Tab -->
+                        <div class="tab-pane fade" id="history">
+                            @if (Model.ImportHistory.Any())
+                            {
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>File Name</th>
+                                                <th>Imported By</th>
+                                                <th class="text-center">Total</th>
+                                                <th class="text-center">Success</th>
+                                                <th class="text-center">Failed</th>
+                                                <th>Status</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.ImportHistory)
+                                            {
+                                                <tr>
+                                                    <td>@item.ImportDate.ToString("MMM dd, yyyy HH:mm")</td>
+                                                    <td>
+                                                        <i class="fas fa-file-excel text-success me-1"></i>
+                                                        @item.FileName
+                                                    </td>
+                                                    <td>@item.ImportedBy</td>
+                                                    <td class="text-center">@item.TotalRows</td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-success">@item.SuccessCount</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-danger">@item.FailedCount</span>
+                                                    </td>
+                                                    <td>
+                                                        @if (item.Success)
+                                                        {
+                                                            <span class="badge bg-success">Completed</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="badge bg-warning">Partial</span>
+                                                        }
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-sm btn-outline-info"
+                                                                onclick="viewImportDetails(@item.Id)">
+                                                            <i class="fas fa-eye"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="text-center py-5">
+                                    <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                                    <h6 class="text-muted">No import history yet</h6>
+                                    <p class="text-muted small">Start by importing your first product list</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Import History Modal -->
+<div class="modal fade" id="importHistoryModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-history me-2"></i>Import History
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>File</th>
+                                <th>Success</th>
+                                <th>Failed</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ImportHistory.Take(10))
+                            {
+                                <tr>
+                                    <td>@item.ImportDate.ToString("MMM dd, HH:mm")</td>
+                                    <td>@item.FileName</td>
+                                    <td>@item.SuccessCount</td>
+                                    <td>@item.FailedCount</td>
+                                    <td>
+                                        <span class="badge @(item.Success ? "bg-success" : "bg-warning")">
+                                            @(item.Success ? "Success" : "Partial")
+                                        </span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        // Drag & Drop functionality
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('ExcelFile');
+        const filePreview = document.getElementById('filePreview');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // Prevent default drag behaviors
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+            document.body.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        // Highlight drop zone on drag over
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            dropZone.classList.add('bg-primary', 'bg-opacity-10');
+            dropZone.classList.add('border-primary');
+        }
+
+        function unhighlight(e) {
+            dropZone.classList.remove('bg-primary', 'bg-opacity-10');
+            dropZone.classList.remove('border-primary');
+        }
+
+        // Handle dropped files
+        dropZone.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            fileInput.files = files;
+            handleFileSelect({ files: files });
+        }
+
+        // Handle file selection
+        window.handleFileSelect = function(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                fileName.textContent = file.name;
+                fileSize.textContent = formatFileSize(file.size);
+                filePreview.classList.remove('d-none');
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Remove file
+        window.removeFile = function() {
+            fileInput.value = '';
+            filePreview.classList.add('d-none');
+            submitBtn.disabled = true;
+        }
+
+        // Format file size
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // Form submission loading state
+        document.getElementById('importForm').addEventListener('submit', function(e) {
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Importing...';
+        });
+
+        // View import details
+        window.viewImportDetails = function(id) {
+            window.location.href = '@Url.Action("ImportResults")?id=' + id;
+        }
+    </script>
+}
+
+<style>
+    .border-dashed {
+        border-style: dashed !important;
+    }
+
+    .upload-area {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+        .upload-area:hover {
+            background-color: rgba(13, 110, 253, 0.05);
+        }
+</style>
+

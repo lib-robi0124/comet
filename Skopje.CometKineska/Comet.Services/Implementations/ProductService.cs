@@ -228,22 +228,6 @@ namespace Comet.Services.Implementations
             {
                 typeValidation.Formula.Values.Add(type);
             }
-
-            //// Add sample data
-            //worksheet.Cells[2, 1].Value = "PROD-001";
-            //worksheet.Cells[2, 2].Value = "Steel";
-            //worksheet.Cells[2, 3].Value = "Sheet";
-            //worksheet.Cells[2, 4].Value = "Red";
-            //worksheet.Cells[2, 5].Value = "White";
-            //worksheet.Cells[2, 6].Value = "A36";
-            //worksheet.Cells[2, 7].Value = "Z275";
-            //worksheet.Cells[2, 8].Value = 1.5;
-            //worksheet.Cells[2, 9].Value = 1000;
-            //worksheet.Cells[2, 10].Value = 500;
-            //worksheet.Cells[2, 11].Value = 480;
-            //worksheet.Cells[2, 12].Value = "Minor scratches";
-            //worksheet.Cells[2, 13].Value = 1000;
-
             worksheet.Cells.AutoFitColumns();
 
             var stream = new MemoryStream();

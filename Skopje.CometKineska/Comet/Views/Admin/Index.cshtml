@@ -1,5 +1,226 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model AdminDashboardVM
 @{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "_AdminLayout";
 }
+
+<div class="container-fluid py-4">
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2">
+            <i class="fas fa-tachometer-alt me-2"></i>Admin Dashboard
+        </h1>
+        <div>
+            <span class="text-muted">
+                <i class="fas fa-calendar me-1"></i>@DateTime.Now.ToString("dddd, MMMM dd, yyyy")
+            </span>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row g-4 mb-4">
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-3">
+                            <i class="fas fa-boxes fs-3 text-primary"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="text-muted mb-1">Total Products</h6>
+                            <h2 class="mb-0">@Model.TotalProducts</h2>
+                            <small class="text-success">
+                                <i class="fas fa-arrow-up me-1"></i>+12 this month
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 bg-success bg-opacity-10 p-3 rounded-3">
+                            <i class="fas fa-check-circle fs-3 text-success"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="text-muted mb-1">Published</h6>
+                            <h2 class="mb-0">@Model.PublishedProducts</h2>
+                            <small class="text-muted">
+                                @(Model.TotalProducts > 0 ? (Model.PublishedProducts * 100 / Model.TotalProducts) : 0)% of total
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 bg-warning bg-opacity-10 p-3 rounded-3">
+                            <i class="fas fa-hourglass-half fs-3 text-warning"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="text-muted mb-1">Unpublished</h6>
+                            <h2 class="mb-0">@Model.UnpublishedProducts</h2>
+                            <small class="text-muted">Awaiting review</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 bg-info bg-opacity-10 p-3 rounded-3">
+                            <i class="fas fa-file-import fs-3 text-info"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="text-muted mb-1">Last Import</h6>
+                            <h2 class="mb-0 fs-3">@(Model.RecentUploads.FirstOrDefault()?.ImportDate.ToString("MMM dd") ?? "Never")</h2>
+                            <small class="text-muted">
+                                @(Model.RecentUploads.FirstOrDefault()?.SuccessCount ?? 0) products
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions & Recent Imports -->
+    <div class="row g-4">
+        <!-- Quick Actions -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white border-0 pt-4">
+                    <h5 class="mb-0">
+                        <i class="fas fa-bolt me-2 text-warning"></i>Quick Actions
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-3">
+                        <a asp-action="ImportProducts" class="btn btn-primary btn-lg">
+                            <i class="fas fa-file-excel me-2"></i>Import Products
+                        </a>
+                        <a asp-action="Products" class="btn btn-outline-primary">
+                            <i class="fas fa-list me-2"></i>View All Products
+                        </a>
+                        <a asp-action="DownloadTemplate" class="btn btn-outline-success">
+                            <i class="fas fa-download me-2"></i>Download Excel Template
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Imports -->
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-0 pt-4 d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-history me-2 text-info"></i>Recent Import History
+                    </h5>
+                    <a href="#" class="btn btn-sm btn-link">View All</a>
+                </div>
+                <div class="card-body">
+                    @if (Model.RecentUploads.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>File Name</th>
+                                        <th>Imported By</th>
+                                        <th>Success</th>
+                                        <th>Failed</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.RecentUploads.Take(5))
+                                    {
+                                        <tr>
+                                            <td>@item.ImportDate.ToString("MMM dd, HH:mm")</td>
+                                            <td>@item.FileName</td>
+                                            <td>@item.ImportedBy</td>
+                                            <td><span class="badge bg-success">@item.SuccessCount</span></td>
+                                            <td><span class="badge bg-danger">@item.FailedCount</span></td>
+                                            <td>
+                                                @if (item.Success)
+                                                {
+                                                    <span class="badge bg-success">Completed</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-warning">Partial</span>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-4">
+                            <img src="~/images/empty-import.svg" alt="No imports" style="max-width: 150px;" class="mb-3 opacity-50">
+                            <h6 class="text-muted">No import history yet</h6>
+                            <p class="text-muted small">Start by importing your first product list</p>
+                            <a asp-action="ImportProducts" class="btn btn-sm btn-primary">
+                                <i class="fas fa-upload me-1"></i>Import Now
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Health (Optional) -->
+    @if (Model.SystemHealth != null)
+    {
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white border-0 pt-4">
+                        <h5 class="mb-0">
+                            <i class="fas fa-heartbeat me-2 text-danger"></i>System Health
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-success me-2 p-2">●</span>
+                                    <span>Status: @Model.SystemHealth.Status</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-database me-2 text-secondary"></i>
+                                    <span>DB: @Model.SystemHealth.DatabaseStatus</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-clock me-2 text-secondary"></i>
+                                    <span>Last Check: @Model.SystemHealth.LastChecked.ToString("HH:mm:ss")</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

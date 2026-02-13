@@ -5356,11 +5356,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet\\Comet.csproj",
+      "projectUniqueName": "D:\\VER_proekt-office\\Comet3_kineska\\Comet\\Comet.csproj",
       "projectName": "Comet",
-      "projectPath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet\\Comet.csproj",
+      "projectPath": "D:\\VER_proekt-office\\Comet3_kineska\\Comet\\Comet.csproj",
       "packagesPath": "C:\\Users\\Robertr2\\.nuget\\packages\\",
-      "outputPath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet\\obj\\",
+      "outputPath": "D:\\VER_proekt-office\\Comet3_kineska\\Comet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5381,11 +5381,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Comet.DataAccess.csproj": {
-              "projectPath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.DataAccess\\Comet.DataAccess.csproj"
+            "D:\\VER_proekt-office\\Comet3_kineska\\Comet.DataAccess\\Comet.DataAccess.csproj": {
+              "projectPath": "D:\\VER_proekt-office\\Comet3_kineska\\Comet.DataAccess\\Comet.DataAccess.csproj"
             },
-            "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Services\\Comet.Services.csproj": {
-              "projectPath": "D:\\proekt-office\\comet\\Skopje.CometKineska\\Comet.Services\\Comet.Services.csproj"
+            "D:\\VER_proekt-office\\Comet3_kineska\\Comet.Services\\Comet.Services.csproj": {
+              "projectPath": "D:\\VER_proekt-office\\Comet3_kineska\\Comet.Services\\Comet.Services.csproj"
             }
           }
         }
@@ -5440,7 +5440,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

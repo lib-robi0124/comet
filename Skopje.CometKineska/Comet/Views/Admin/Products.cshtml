@@ -1,0 +1,434 @@
+﻿@model IEnumerable<ProductVM>
+@{
+    ViewData["Title"] = "Manage Products";
+    Layout = "_AdminLayout";
+    var searchTerm = ViewBag.SearchTerm as string ?? "";
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+    int pageSize = ViewBag.PageSize ?? 20;
+}
+
+<div class="container-fluid py-4">
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-1">
+                <i class="fas fa-boxes me-2 text-primary"></i>Manage Products
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a asp-action="Index">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Products</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="d-flex gap-2">
+            <a asp-action="ImportProducts" class="btn btn-success">
+                <i class="fas fa-file-excel me-1"></i>Import Excel
+            </a>
+            <a asp-action="DownloadTemplate" class="btn btn-outline-success">
+                <i class="fas fa-download me-1"></i>Template
+            </a>
+        </div>
+    </div>
+
+    <!-- Filters Card -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-3 align-items-end">
+                <div class="col-md-5">
+                    <label class="form-label fw-bold">
+                        <i class="fas fa-search me-1"></i>Search Products
+                    </label>
+                    <div class="input-group">
+                        <input type="text"
+                               name="search"
+                               value="@searchTerm"
+                               class="form-control"
+                               placeholder="Product code, grade, or color...">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        @if (!string.IsNullOrEmpty(searchTerm))
+                        {
+                            <a asp-action="Products" class="btn btn-outline-secondary">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">Filter by Status</label>
+                    <select class="form-select" id="statusFilter">
+                        <option value="all">All Products</option>
+                        <option value="published">Published</option>
+                        <option value="unpublished">Unpublished</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label fw-bold">Show</label>
+                    <select class="form-select" id="pageSizeSelect">
+                        <option value="20" selected="@(pageSize == 20)">20 items</option>
+                        <option value="50" selected="@(pageSize == 50)">50 items</option>
+                        <option value="100" selected="@(pageSize == 100)">100 items</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-primary w-100" id="bulkActionsBtn" disabled>
+                        <i class="fas fa-tasks me-1"></i>Bulk Actions
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Products Table -->
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 pt-4 d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">
+                <i class="fas fa-list me-2 text-primary"></i>Product List
+                <span class="badge bg-secondary ms-2">@ViewBag.TotalItems items</span>
+            </h5>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="selectAll">
+                <label class="form-check-label" for="selectAll">
+                    Select All
+                </label>
+            </div>
+        </div>
+        <div class="card-body">
+            @if (Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th width="40"></th>
+                                <th>Product Code</th>
+                                <th>Category / Type</th>
+                                <th>Specifications</th>
+                                <th>Weight</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Created</th>
+                                <th width="120">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model)
+                            {
+                                <tr class="@(!product.IsPublished ? "table-warning" : "")">
+                                    <td>
+                                        <input type="checkbox"
+                                               class="product-checkbox"
+                                               value="@product.Id"
+                                               data-published="@product.IsPublished">
+                                    </td>
+                                    <td>
+                                        <strong>@product.ProductCode</strong>
+                                        <br>
+                                        <small class="text-muted">ID: @product.Id</small>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-info">@product.ProductCategory</span>
+                                        <br>
+                                        <small>@product.ProductType</small>
+                                    </td>
+                                    <td>
+                                        <span class="d-block"><strong>Grade:</strong> @product.Grade</span>
+                                        <span class="d-block"><small>Zinc: @product.ZincCoating</small></span>
+                                        <span class="d-block"><small>@product.ColorTopSide / @product.ColorBottomSide</small></span>
+                                    </td>
+                                    <td>
+                                        @product.Thickness mm<br>
+                                        @product.Width mm<br>
+                                        <small>@product.NetWeight kg</small>
+                                    </td>
+                                    <td>
+                                        @if (product.Price.HasValue)
+                                        {
+                                            <strong class="text-success">$@product.Price.Value.ToString("N2")</strong>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">Not set</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (product.IsPublished)
+                                        {
+                                            <span class="badge bg-success">Published</span>
+                                            <br>
+                                            <small>@product.PublishedAt?.ToString("MMM dd")</small>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">Unpublished</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <small>@product.CreatedAt.ToString("MMM dd, yyyy")</small>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a asp-controller="Product"
+                                               asp-action="Edit"
+                                               asp-route-id="@product.Id"
+                                               class="btn btn-sm btn-outline-primary"
+                                               title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button type="button"
+                                                    class="btn btn-sm @(product.IsPublished ? "btn-outline-warning" : "btn-outline-success")"
+                                                    onclick="togglePublish(@product.Id, @product.IsPublished.ToString().ToLower())"
+                                                    title="@(product.IsPublished ? "Unpublish" : "Publish")">
+                                                <i class="fas @(product.IsPublished ? "fa-eye-slash" : "fa-eye")"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                @if (totalPages > 1)
+                {
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                                <a class="page-link"
+                                   asp-action="Products"
+                                   asp-route-page="@(currentPage - 1)"
+                                   asp-route-search="@searchTerm">
+                                    Previous
+                                </a>
+                            </li>
+
+                            @for (int i = 1; i <= totalPages; i++)
+                            {
+                                <li class="page-item @(i == currentPage ? "active" : "")">
+                                    <a class="page-link"
+                                       asp-action="Products"
+                                       asp-route-page="@i"
+                                       asp-route-search="@searchTerm">
+                                        @i
+                                    </a>
+                                </li>
+                            }
+
+                            <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                                <a class="page-link"
+                                   asp-action="Products"
+                                   asp-route-page="@(currentPage + 1)"
+                                   asp-route-search="@searchTerm">
+                                    Next
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                }
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <div class="mb-4">
+                        <i class="fas fa-box-open fa-4x text-muted opacity-50"></i>
+                    </div>
+                    <h5 class="text-muted mb-3">No Products Found</h5>
+                    @if (!string.IsNullOrEmpty(searchTerm))
+                    {
+                        <p class="text-muted mb-4">No products match your search criteria.</p>
+                        <a asp-action="Products" class="btn btn-outline-secondary">
+                            <i class="fas fa-times me-2"></i>Clear Search
+                        </a>
+                    }
+                    else
+                    {
+                        <p class="text-muted mb-4">Get started by importing your first product list.</p>
+                        <a asp-action="ImportProducts" class="btn btn-primary px-4">
+                            <i class="fas fa-file-excel me-2"></i>Import Products
+                        </a>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Bulk Actions Modal -->
+<div class="modal fade" id="bulkActionsModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-tasks me-2"></i>Bulk Actions
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Selected <span id="selectedCount">0</span> products</p>
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-success" onclick="bulkPublish()">
+                        <i class="fas fa-eye me-2"></i>Publish Selected
+                    </button>
+                    <button type="button" class="btn btn-warning" onclick="bulkUnpublish()">
+                        <i class="fas fa-eye-slash me-2"></i>Unpublish Selected
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="bulkDelete()">
+                        <i class="fas fa-trash me-2"></i>Delete Selected
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Select All functionality
+        document.getElementById('selectAll').addEventListener('change', function(e) {
+            const checkboxes = document.querySelectorAll('.product-checkbox');
+            checkboxes.forEach(cb => cb.checked = e.target.checked);
+            updateBulkActionsButton();
+        });
+
+        // Individual checkbox change
+        document.querySelectorAll('.product-checkbox').forEach(cb => {
+            cb.addEventListener('change', updateBulkActionsButton);
+        });
+
+        // Update bulk actions button state
+        function updateBulkActionsButton() {
+            const selected = document.querySelectorAll('.product-checkbox:checked');
+            const btn = document.getElementById('bulkActionsBtn');
+
+            if (selected.length > 0) {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fas fa-tasks me-1"></i>Bulk Actions (${selected.length})`;
+            } else {
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-tasks me-1"></i>Bulk Actions';
+            }
+        }
+
+        // Bulk actions modal
+        document.getElementById('bulkActionsBtn').addEventListener('click', function() {
+            const selected = document.querySelectorAll('.product-checkbox:checked');
+            document.getElementById('selectedCount').textContent = selected.length;
+            new bootstrap.Modal(document.getElementById('bulkActionsModal')).show();
+        });
+
+        // Bulk Publish
+        function bulkPublish() {
+            const selected = Array.from(document.querySelectorAll('.product-checkbox:checked'))
+                .map(cb => cb.value);
+
+            fetch('@Url.Action("BulkPublish")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value || ''
+                },
+                body: JSON.stringify(selected)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                }
+            });
+        }
+
+        // Bulk Unpublish
+        function bulkUnpublish() {
+            const selected = Array.from(document.querySelectorAll('.product-checkbox:checked'))
+                .map(cb => cb.value);
+
+            fetch('@Url.Action("BulkUnpublish")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value || ''
+                },
+                body: JSON.stringify(selected)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                }
+            });
+        }
+
+        // Bulk Delete
+        function bulkDelete() {
+            if (!confirm('Are you sure you want to delete the selected products?')) {
+                return;
+            }
+
+            const selected = Array.from(document.querySelectorAll('.product-checkbox:checked'))
+                .map(cb => cb.value);
+
+            fetch('@Url.Action("BulkDelete")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value || ''
+                },
+                body: JSON.stringify(selected)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                }
+            });
+        }
+
+        // Toggle publish/unpublish single product
+        function togglePublish(id, isPublished) {
+            const action = isPublished ? 'Unpublish' : 'Publish';
+
+            fetch(`@Url.Action("BulkPublish")`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value || ''
+                },
+                body: JSON.stringify([id])
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                }
+            });
+        }
+
+        // Page size change
+        document.getElementById('pageSizeSelect').addEventListener('change', function(e) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('pageSize', e.target.value);
+            url.searchParams.set('page', '1');
+            window.location.href = url.toString();
+        });
+
+        // Status filter
+        document.getElementById('statusFilter').addEventListener('change', function(e) {
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                if (e.target.value === 'all') {
+                    row.style.display = '';
+                } else if (e.target.value === 'published') {
+                    const status = row.querySelector('.badge.bg-success');
+                    row.style.display = status ? '' : 'none';
+                } else if (e.target.value === 'unpublished') {
+                    const status = row.querySelector('.badge.bg-secondary');
+                    row.style.display = status ? '' : 'none';
+                }
+            });
+        });
+    </script>
+}

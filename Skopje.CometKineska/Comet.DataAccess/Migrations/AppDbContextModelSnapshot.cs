@@ -77,6 +77,9 @@ namespace Comet.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime?>("AuctionEndDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("AuctionStartTime")
                         .HasColumnType("datetime2");
 
@@ -172,7 +175,7 @@ namespace Comet.DataAccess.Migrations
                             Id = 1,
                             AuctionStartTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ColorTopSide = "RAL 9002 LTP",
-                            CreatedAt = new DateTime(2025, 12, 29, 11, 9, 45, 440, DateTimeKind.Utc).AddTicks(1778),
+                            CreatedAt = new DateTime(2026, 2, 13, 14, 18, 5, 234, DateTimeKind.Utc).AddTicks(7164),
                             Defects = "unpainted spots",
                             Grade = "DX51D +Z",
                             GrossWeight = 1465m,
@@ -192,7 +195,7 @@ namespace Comet.DataAccess.Migrations
                             AuctionStartTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ColorBottomSide = "LZS 7030",
                             ColorTopSide = "RAL 9006",
-                            CreatedAt = new DateTime(2025, 12, 29, 11, 9, 45, 440, DateTimeKind.Utc).AddTicks(1790),
+                            CreatedAt = new DateTime(2026, 2, 13, 14, 18, 5, 234, DateTimeKind.Utc).AddTicks(7176),
                             Defects = "unpainted spots",
                             Grade = "S250GD +Z",
                             GrossWeight = 0.890m,
@@ -301,18 +304,18 @@ namespace Comet.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2025, 12, 29, 11, 9, 45, 440, DateTimeKind.Utc).AddTicks(1932),
+                            CreatedDate = new DateTime(2026, 2, 13, 14, 18, 5, 234, DateTimeKind.Utc).AddTicks(7246),
                             Email = "customer1@buyer.com",
-                            Password = "AQAAAAIAAYagAAAAEN5FiNedAWty+f2XEZ/urSVat2TzTklLWJUxEp5YBxMHSkizHvqk5hQ1PxESb/SIJw==",
+                            Password = "AQAAAAIAAYagAAAAEH+z762xHy+4qdyi0FGB92UfHg+olFccAJIPpHqs3mUaNSp1U28g95giaFAFSuzaNA==",
                             RoleId = 3,
                             CompanyName = "SteelWorks Inc"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2025, 12, 29, 11, 9, 45, 440, DateTimeKind.Utc).AddTicks(1939),
+                            CreatedDate = new DateTime(2026, 2, 13, 14, 18, 5, 234, DateTimeKind.Utc).AddTicks(7247),
                             Email = "customer2@buyer.com",
-                            Password = "AQAAAAIAAYagAAAAEN5FiNedAWty+f2XEZ/urSVat2TzTklLWJUxEp5YBxMHSkizHvqk5hQ1PxESb/SIJw==",
+                            Password = "AQAAAAIAAYagAAAAEH+z762xHy+4qdyi0FGB92UfHg+olFccAJIPpHqs3mUaNSp1U28g95giaFAFSuzaNA==",
                             RoleId = 3,
                             CompanyName = "MetalPro Industries"
                         });
@@ -335,18 +338,18 @@ namespace Comet.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 12, 29, 11, 9, 45, 440, DateTimeKind.Utc).AddTicks(1846),
+                            CreatedDate = new DateTime(2026, 2, 13, 14, 18, 5, 234, DateTimeKind.Utc).AddTicks(7217),
                             Email = "admin@liberty.com",
-                            Password = "AQAAAAIAAYagAAAAEFPMtFeiolPvXsWN1g9fjrBV1hwQI65nOjnL/Z7QZtMbJ1NUjOWKrpg6JBC+oY5Kkg==",
+                            Password = "AQAAAAIAAYagAAAAEHVaBd7TgkI3iJxPzwMYQBOYpwQOKtefaVftOtxxsILnibw+EUncOR6Rsm+gPqiuZQ==",
                             RoleId = 1,
                             FullName = "Liberty Admin"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2025, 12, 29, 11, 9, 45, 440, DateTimeKind.Utc).AddTicks(1852),
+                            CreatedDate = new DateTime(2026, 2, 13, 14, 18, 5, 234, DateTimeKind.Utc).AddTicks(7222),
                             Email = "reports@liberty.com",
-                            Password = "AQAAAAIAAYagAAAAEI30L+x9SLK376ddrhdlCZSzVoF2i/7/jOmCcDIiLRoh+yVKQsrGaG0VlmJvgJR5+Q==",
+                            Password = "AQAAAAIAAYagAAAAEB5MDVk7Q3BKkOhshxtqzZ0sR+5o47f1Rt5ciIgzzoah5oGYbtseAMp9hH+qJ6V6RA==",
                             RoleId = 2,
                             FullName = "Report User"
                         });

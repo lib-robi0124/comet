@@ -1,8 +1,17 @@
-﻿using Comet.Domain.Enums;
-using LinqToExcel.Attributes;
+using Comet.Domain.Enums;
 
 namespace Comet.DTO.DTOs
 {
+    [AttributeUsage(AttributeTargets.Property)]
+    public class ExcelColumnAttribute : Attribute
+    {
+        public string ColumnName { get; }
+        public ExcelColumnAttribute(string columnName)
+        {
+            ColumnName = columnName;
+        }
+    }
+
     public class ProductExcelDto
     {
         [ExcelColumn("Product Code")]

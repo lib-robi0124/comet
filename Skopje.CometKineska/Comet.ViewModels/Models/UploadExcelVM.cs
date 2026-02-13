@@ -1,13 +1,38 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 
 namespace Comet.ViewModels.Models
 {
+    // Custom validation attribute for Excel files
+    public class AllowedExtensionsAttribute : ValidationAttribute
+    {
+        private readonly string[] _extensions;
+
+        public AllowedExtensionsAttribute(string[] extensions)
+        {
+            _extensions = extensions;
+        }
+
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        {
+            if (value is IFormFile file)
+            {
+                var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
+                if (!_extensions.Contains(extension))
+                {
+                    return new ValidationResult($"Please upload an Excel file (.xlsx or .xls). Got: {extension}");
+                }
+            }
+            return ValidationResult.Success;
+        }
+    }
+
     public class UploadExcelVM
     {
         [Required(ErrorMessage = "Excel file is required")]
         [Display(Name = "Excel File")]
-        [FileExtensions(Extensions = "xlsx,xls", ErrorMessage = "Please upload an Excel file (.xlsx or .xls)")]
+        [AllowedExtensions(new string[] { ".xlsx", ".xls" })]
         public IFormFile ExcelFile { get; set; } = null!;
 
         [Display(Name = "Overwrite existing products?")]

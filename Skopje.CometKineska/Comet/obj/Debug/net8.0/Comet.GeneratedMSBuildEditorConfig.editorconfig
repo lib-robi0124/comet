@@ -36,8 +36,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/VER_proekt-office/Comet3_kineska/Comet/Views/Auction/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVjdGlvblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/VER_proekt-office/Comet3_kineska/Comet/Views/Auction/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVjdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VER_proekt-office/Comet3_kineska/Comet/Views/Auction/MyBids.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVjdGlvblxNeUJpZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VER_proekt-office/Comet3_kineska/Comet/Views/Auction/ProductBids.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVjdGlvblxQcm9kdWN0Qmlkcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/VER_proekt-office/Comet3_kineska/Comet/Views/Home/Index.cshtml]

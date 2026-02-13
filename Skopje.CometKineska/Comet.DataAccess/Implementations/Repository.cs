@@ -1,7 +1,5 @@
 ﻿using Comet.DataAccess.DataContext;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace Comet.DataAccess.Implementations
 {

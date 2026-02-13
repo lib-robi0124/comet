@@ -1,4 +1,4 @@
-﻿using Comet.Domain.Enums;
+using Comet.Domain.Enums;
 using Comet.DTO.DTOs;
 using Comet.ViewModels.Models;
 using Microsoft.Extensions.Logging;
@@ -21,10 +21,10 @@ namespace Comet.DataAccess.Excel
             using var package = new ExcelPackage(excelStream);
             var worksheet = package.Workbook.Worksheets[0];
 
-            // Get properties with ExcelColumn attribute
+            // Get properties with ExcelColumn attribute (from Comet.DTO.DTOs)
             var properties = typeof(T).GetProperties()
-                .Where(p => p.GetCustomAttribute<ExcelColumnAttribute>() != null)
-                .ToDictionary(p => p.GetCustomAttribute<ExcelColumnAttribute>()!.ColumnName);
+                .Where(p => p.GetCustomAttribute<Comet.DTO.DTOs.ExcelColumnAttribute>() != null)
+                .ToDictionary(p => p.GetCustomAttribute<Comet.DTO.DTOs.ExcelColumnAttribute>()!.ColumnName);
 
             for (int row = 2; row <= worksheet.Dimension.Rows; row++)
             {
@@ -171,14 +171,6 @@ namespace Comet.DataAccess.Excel
 
             return Convert.ChangeType(value, targetType);
         }
-        [AttributeUsage(AttributeTargets.Property)]
-        public class ExcelColumnAttribute : Attribute
-        {
-            public string ColumnName { get; }
-            public ExcelColumnAttribute(string columnName)
-            {
-                ColumnName = columnName;
-            }
-        }
     }
+
 }

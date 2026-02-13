@@ -4,6 +4,7 @@ using Comet.Domain.Entities;
 using Comet.Domain.Enums;
 using Comet.DTO.DTOs;
 using Comet.Services.Interfaces;
+using Comet.ViewModels.Auction;
 using Comet.ViewModels.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
@@ -60,6 +61,7 @@ namespace Comet.Services.Implementations
                 }).ToList();
 
                 await _productRepository.BulkInsertOrUpdateAsync(products);
+                await _productRepository.SaveChangesAsync();
 
                 importResult.Success = true;
                 _logger.LogInformation("Successfully imported {Count} products", products.Count);

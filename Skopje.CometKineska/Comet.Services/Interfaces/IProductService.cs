@@ -1,4 +1,5 @@
-﻿using Comet.ViewModels.Models;
+﻿using Comet.ViewModels.Auction;
+using Comet.ViewModels.Models;
 
 namespace Comet.Services.Interfaces
 {

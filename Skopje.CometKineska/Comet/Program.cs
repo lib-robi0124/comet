@@ -2,6 +2,10 @@ using Comet.DataAccess.Excel;
 using Comet.Services.AutoMapper;
 using Comet.Services.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using OfficeOpenXml;
+
+// Set EPPlus license for non-commercial use (EPPlus 8+)
+ExcelPackage.License.SetNonCommercialPersonal("Comet3");
 
 var builder = WebApplication.CreateBuilder(args);
 

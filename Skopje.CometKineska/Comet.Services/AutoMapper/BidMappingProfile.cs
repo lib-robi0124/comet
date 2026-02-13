@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Comet.Domain.Entities;
-using Comet.ViewModels.Models;
+using Comet.ViewModels.Auction;
 
 namespace Comet.Services.AutoMapper
 {

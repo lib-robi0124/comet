@@ -1,0 +1,160 @@
+﻿@model List<MyRecentBidVM>
+@{
+    ViewData["Title"] = "My Bids";
+}
+
+<div class="container-fluid py-4">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm bg-gradient-primary text-white">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="h2 mb-2">
+                                <i class="fas fa-list me-2"></i>My Bids
+                            </h1>
+                            <p class="mb-0 opacity-75">Track all your bidding activity</p>
+                        </div>
+                        <div>
+                            <a href="@Url.Action("Index")" class="btn btn-light">
+                                <i class="fas fa-gavel me-2"></i>Browse Auctions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary Stats -->
+    @if (Model.Any())
+    {
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-3">
+                                <i class="fas fa-gavel fs-3 text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="text-muted mb-1">Total Bids</h6>
+                                <h2 class="mb-0">@Model.Count</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 bg-success bg-opacity-10 p-3 rounded-3">
+                                <i class="fas fa-trophy fs-3 text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="text-muted mb-1">Winning</h6>
+                                <h2 class="mb-0">@Model.Count(b => b.IsWinning)</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 bg-warning bg-opacity-10 p-3 rounded-3">
+                                <i class="fas fa-clock fs-3 text-warning"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="text-muted mb-1">Outbid</h6>
+                                <h2 class="mb-0">@Model.Count(b => !b.IsWinning)</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- Bids List -->
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+            @if (Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>My Bid</th>
+                                <th>Current Highest</th>
+                                <th>Bid Time</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var bid in Model.OrderByDescending(b => b.BidTime))
+                            {
+                                <tr>
+                                    <td>
+                                        <strong>@bid.ProductCode</strong>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-secondary">Steel</span> <!-- You might want to add actual category -->
+                                    </td>
+                                    <td>
+                                        <span class="fw-bold">@bid.MyBidDisplay</span>
+                                    </td>
+                                    <td>
+                                        @if (bid.MyBidAmount >= bid.CurrentHighestBid)
+                                        {
+                                            <span class="text-success fw-bold">@bid.CurrentBidDisplay</span>
+                                        }
+                                        else
+                                        {
+                                            <span>@bid.CurrentBidDisplay</span>
+                                        }
+                                    </td>
+                                    <td>@bid.TimeDisplay</td>
+                                    <td>
+                                        <span class="badge bg-@bid.StatusClass">@bid.Status</span>
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("Details", new { id = bid.ProductId })"
+                                           class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-eye me-1"></i>View
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="fas fa-gavel fa-4x text-muted mb-3"></i>
+                    <h4 class="text-muted mb-3">No Bids Yet</h4>
+                    <p class="text-muted mb-4">You haven't placed any bids yet. Start bidding on active auctions!</p>
+                    <a href="@Url.Action("Index")" class="btn btn-primary">
+                        <i class="fas fa-gavel me-2"></i>Browse Auctions
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .bg-gradient-primary {
+            background: linear-gradient(45deg, #0d6efd, #0b5ed7);
+        }
+    </style>
+}

@@ -29,5 +29,6 @@ namespace Comet.Domain.Entities
         public DateTime? PublishedAt { get; set; }
         public DateTime AuctionStartTime { get; set; }
         public decimal MinimumBidPrice { get; set; }
+        public DateTime? AuctionEndDate { get; set; }
     }
 }

@@ -59,7 +59,15 @@ namespace YourProjectName.Controllers
         {
             try
             {
-                var products = await _productService.GetAllProductsAsync();
+                // DEBUG: Direct repository test
+                var repoCount = await _productRepository.GetCountAsync();
+                var repoProducts = await _productRepository.GetAllAsync();
+                var serviceProducts = await _productService.GetAllProductsAsync();
+                
+                // Show debug info in TempData
+                TempData["DebugInfo"] = $"RepoCount: {repoCount}, RepoGetAll: {repoProducts.Count()}, ServiceGetAll: {serviceProducts.Count()}";
+                
+                var products = serviceProducts;
 
                 if (!string.IsNullOrEmpty(search))
                 {
@@ -85,7 +93,7 @@ namespace YourProjectName.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error loading products for admin");
-                TempData["ErrorMessage"] = "Error loading products.";
+                TempData["ErrorMessage"] = $"Error: {ex.Message} | Inner: {ex.InnerException?.Message}";
                 return View(new List<ProductVM>());
             }
         }
@@ -107,8 +115,30 @@ namespace YourProjectName.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ImportProducts(AdminProductImportVM viewModel)
         {
+            // DEBUG: Log file info
+            _logger.LogInformation("=== ImportProducts POST called ===");
+            _logger.LogInformation("ExcelFile is null: {IsNull}", viewModel.ExcelFile == null);
+            if (viewModel.ExcelFile != null)
+            {
+                _logger.LogInformation("FileName: {FileName}, Size: {Size}, ContentType: {ContentType}",
+                    viewModel.ExcelFile.FileName,
+                    viewModel.ExcelFile.Length,
+                    viewModel.ExcelFile.ContentType);
+            }
+
+            // DEBUG: Log ModelState errors
             if (!ModelState.IsValid)
+            {
+                foreach (var key in ModelState.Keys)
+                {
+                    var state = ModelState[key];
+                    foreach (var error in state.Errors)
+                    {
+                        _logger.LogWarning("ModelState Error - Key: {Key}, Error: {Error}", key, error.ErrorMessage);
+                    }
+                }
                 return View(viewModel);
+            }
 
             try
             {
